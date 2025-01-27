@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-gray-900;
+  }
+
+  p {
+    @apply text-gray-600;
+  }
+}
+
+@layer components {
+  .container-width {
+    @apply max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-primary 
+    rounded-md shadow-sm hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 
+    focus:ring-primary-500 transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-primary-600 
+    bg-primary-50 rounded-md hover:bg-primary-100 focus:outline-none focus:ring-2 
+    focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-200;
+  }
+
+  .nav-link {
+    @apply inline-flex items-center px-1 py-3 text-sm font-medium text-gray-600 
+    transition-colors duration-200 border-b-2 border-transparent hover:text-primary-600 
+    hover:border-primary-500;
+  }
+
+  .nav-link-active {
+    @apply text-primary-600 border-primary-500;
+  }
+
+  .heading-xl {
+    @apply text-3xl font-bold sm:text-4xl lg:text-5xl;
+  }
+
+  .heading-lg {
+    @apply text-2xl font-bold sm:text-3xl lg:text-4xl;
+  }
+
+  .heading-md {
+    @apply text-xl font-bold sm:text-2xl lg:text-3xl;
+  }
+
+  .text-body {
+    @apply text-base text-gray-600 leading-relaxed;
+  }
+}
