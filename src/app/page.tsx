@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Testimonials from '@/components/Testimonials';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -8,6 +9,16 @@ export default function Home() {
       <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
         <div className="container-width">
           <div className="max-w-3xl mx-auto text-center">
+            <div className="mb-8">
+              <Image 
+                src="/images/2ml_logo.png"
+                alt="Company Logo"
+                width={160}
+                height={160}
+                className="mx-auto hover:scale-105 transition-transform"
+                priority
+              />
+            </div>
             <div className="mb-6">
               <span className="badge bg-primary-100 text-primary-800">
                 Boutique Focus • Enterprise Capabilities
@@ -37,7 +48,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="heading-lg mb-4">Trusted AI Engineering</h2>
             <p className="text-body text-lg">
-              {30}+ years experience building production AI systems
+              {30}+ years combined experience building production data and AI systems
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -115,14 +126,14 @@ export default function Home() {
           {/* Case Study */}
           <div className="mt-12 text-center bg-white p-6 rounded-xl">
             <h3 className="heading-md mb-4">Immediate Impact</h3>
-            <p className="text-body mb-6 max-w-2xl mx-auto">
-              Built a production-ready voice AI platform featuring:
-              <div className="flex flex-wrap justify-center gap-2 mt-3">
-                <span className="badge bg-green-100 text-green-800">State-of-the-art speech chatbot</span>
-                <span className="badge bg-blue-100 text-blue-800">Real-time AI evaluations</span>
-                <span className="badge bg-purple-100 text-purple-800">Scalable cloud architecture</span>
+            <div className="text-body mb-6 max-w-2xl mx-auto">
+              <p className="mb-3">Built a production-ready voice AI platform featuring:</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                <span className="badge bg-gray-100 text-gray-700">State-of-the-art speech chatbot</span>
+                <span className="badge bg-gray-100 text-gray-700">Real-time AI evaluations</span>
+                <span className="badge bg-gray-100 text-gray-700">Scalable cloud architecture</span>
               </div>
-            </p>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div className="bg-primary-50 p-4 rounded-lg flex flex-col items-center">
                 <div className="heading-lg">3</div>
@@ -145,10 +156,10 @@ export default function Home() {
               Our results-driven approach led to:
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-6">
-              <span className="badge bg-green-100 text-green-800">Repeat engagements</span>
-              <span className="badge bg-blue-100 text-blue-800">Technical validation</span>
-              <span className="badge bg-purple-100 text-purple-800">Ethical alignment</span>
-              <span className="badge bg-orange-100 text-orange-800">Production readiness</span>
+              <span className="badge bg-gray-100 text-gray-700">Repeat engagements</span>
+              <span className="badge bg-gray-100 text-gray-700">Technical validation</span>
+              <span className="badge bg-gray-100 text-gray-700">Ethical alignment</span>
+              <span className="badge bg-gray-100 text-gray-700">Production readiness</span>
             </div>
             <Link href="/case-studies/voice-ai" className="btn-secondary">
               Read Case Study →

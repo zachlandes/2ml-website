@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "2ML | AI & Data Engineering Solutions",
   description: "State-of-the-art AI solutions and data engineering for businesses. From RAG systems and chatbots to production data lakes and AI-powered applications.",
+  icons: {
+    icon: '/favicon.ico'
+  }
 };
 
 export default function RootLayout({
