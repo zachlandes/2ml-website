@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Testimonials from '@/components/Testimonials';
-import ClientLogos from '@/components/ClientLogos';
 
 export default function Home() {
   return (
@@ -9,11 +8,16 @@ export default function Home() {
       <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
         <div className="container-width">
           <div className="max-w-3xl mx-auto text-center">
+            <div className="mb-6">
+              <span className="badge bg-primary-100 text-primary-800">
+                Boutique Focus • Enterprise Capabilities
+              </span>
+            </div>
             <h1 className="heading-xl mb-6">
-              Building State-of-the-Art AI Solutions
+              AI Solutions Built for Scale
             </h1>
             <p className="text-body mb-8 text-lg">
-              We implement cutting-edge AI solutions for businesses, from intelligent RAG systems and chatbots to production-ready data lakes and AI-powered applications.
+              We're a founder-led AI firm with the ability to scale teams to meet project demands. From rapid prototypes to enterprise deployments - we bring the right expertise for your challenge.
             </p>
             <div className="flex items-center justify-center gap-x-4">
               <Link href="/services" className="btn-primary">
@@ -27,8 +31,131 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Client Logos section */}
-      <ClientLogos />
+      {/* Technology & Expertise section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-width">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="heading-lg mb-4">Trusted AI Engineering</h2>
+            <p className="text-body text-lg">
+              {30}+ years experience building production AI systems
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="card p-6">
+              <h3 className="heading-md mb-3 text-primary-600">AI Solutions</h3>
+              <div className="space-y-2 text-base">
+                <div className="flex items-baseline gap-2">
+                  <span>•</span>
+                  <span>Major APIs & open-source models<br />
+                  <span className="text-sm text-gray-600">(Llama, OpenAI, Anthropic)</span></span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span>•</span>
+                  <span>Custom model development</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span>•</span>
+                  <span>Performance optimization</span>
+                </div>
+              </div>
+            </div>
+            <div className="card p-6">
+              <h3 className="heading-md mb-3 text-primary-600">Cloud</h3>
+              <div className="space-y-2 text-base">
+                <div className="flex items-baseline gap-2">
+                  <span>•</span>
+                  <span>AWS/GCP managed services</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span>•</span>
+                  <span>Serverless architectures</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span>•</span>
+                  <span>Cost-efficient scaling</span>
+                </div>
+              </div>
+            </div>
+            <div className="card p-6">
+              <h3 className="heading-md mb-3 text-primary-600">Data</h3>
+              <div className="space-y-2 text-base">
+                <div className="flex items-baseline gap-2">
+                  <span>•</span>
+                  <span>Vector databases</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span>•</span>
+                  <span>Real-time pipelines</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span>•</span>
+                  <span>Enterprise security</span>
+                </div>
+              </div>
+            </div>
+            <div className="card p-6">
+              <h3 className="heading-md mb-3 text-primary-600">MLOps</h3>
+              <div className="space-y-2 text-base">
+                <div className="flex items-baseline gap-2">
+                  <span>•</span>
+                  <span>CI/CD pipelines</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span>•</span>
+                  <span>Performance monitoring</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span>•</span>
+                  <span>Drift detection</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Case Study */}
+          <div className="mt-12 text-center bg-white p-6 rounded-xl">
+            <h3 className="heading-md mb-4">Immediate Impact</h3>
+            <p className="text-body mb-6 max-w-2xl mx-auto">
+              Built a production-ready voice AI platform featuring:
+              <div className="flex flex-wrap justify-center gap-2 mt-3">
+                <span className="badge bg-green-100 text-green-800">State-of-the-art speech chatbot</span>
+                <span className="badge bg-blue-100 text-blue-800">Real-time AI evaluations</span>
+                <span className="badge bg-purple-100 text-purple-800">Scalable cloud architecture</span>
+              </div>
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              <div className="bg-primary-50 p-4 rounded-lg flex flex-col items-center">
+                <div className="heading-lg">3</div>
+                <div className="text-sm mt-1">Weeks to Prototype</div>
+              </div>
+              <div className="bg-primary-50 p-4 rounded-lg flex flex-col items-center">
+                <div className="heading-lg">2</div>
+                <div className="text-sm mt-1">Strategic Pilots</div>
+              </div>
+              <div className="bg-primary-50 p-4 rounded-lg flex flex-col items-center">
+                <div className="heading-lg">6</div>
+                <div className="text-sm mt-1">Weeks to MVP</div>
+              </div>
+              <div className="bg-primary-50 p-4 rounded-lg flex flex-col items-center">
+                <div className="heading-lg">2</div>
+                <div className="text-sm mt-1">Follow-on Contracts</div>
+              </div>
+            </div>
+            <p className="text-body mb-4">
+              Our results-driven approach led to:
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
+              <span className="badge bg-green-100 text-green-800">Repeat engagements</span>
+              <span className="badge bg-blue-100 text-blue-800">Technical validation</span>
+              <span className="badge bg-purple-100 text-purple-800">Ethical alignment</span>
+              <span className="badge bg-orange-100 text-orange-800">Production readiness</span>
+            </div>
+            <Link href="/case-studies/voice-ai" className="btn-secondary">
+              Read Case Study →
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Services overview section */}
       <section className="section-padding bg-white">
@@ -92,6 +219,35 @@ export default function Home() {
       {/* Testimonials section */}
       <Testimonials />
 
+      {/* Team Approach section */}
+      <section className="section-padding bg-white">
+        <div className="container-width text-center">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="heading-lg mb-6">Senior-Led, Scalable Execution</h2>
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div className="text-center p-4">
+                <div className="text-4xl font-bold mb-2">2</div>
+                <div className="font-medium">Founding Partners</div>
+                <p className="text-sm mt-2">Hands-on technical leadership</p>
+              </div>
+              <div className="text-center p-4">
+                <div className="text-4xl font-bold mb-2">15+</div>
+                <div className="font-medium">Core Network</div>
+                <p className="text-sm mt-2">Specialist AI engineers & architects</p>
+              </div>
+              <div className="text-center p-4">
+                <div className="text-4xl font-bold mb-2">∞</div>
+                <div className="font-medium">Flexibility</div>
+                <p className="text-sm mt-2">Scale up/down as needed</p>
+              </div>
+            </div>
+            <p className="text-body">
+              Get the attention of a boutique firm with the resources of a large agency. Our network of trusted specialists allows us to right-size teams for every engagement.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA section */}
       <section className="section-padding bg-primary-50">
         <div className="container-width">
@@ -109,3 +265,4 @@ export default function Home() {
     </>
   );
 }
+
