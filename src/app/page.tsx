@@ -28,7 +28,7 @@ export default function Home() {
               AI Solutions Built for Scale
             </h1>
             <p className="text-body mb-8 text-lg">
-              We're a founder-led AI firm with the ability to scale teams to meet project demands. From rapid prototypes to enterprise deployments - we bring the right expertise for your challenge.
+              We're a founder-led AI firm with the ability to scale teams to meet project demands. From rapid prototypes to enterprise deployments; from product management to implementing the latest AI research - we bring the right expertise for your challenge.
             </p>
             <div className="flex items-center justify-center gap-x-4">
               <Link href="/services" className="btn-primary">
@@ -92,7 +92,7 @@ export default function Home() {
               <div className="space-y-2 text-base">
                 <div className="flex items-baseline gap-2">
                   <span>•</span>
-                  <span>Vector databases</span>
+                  <span>Data platforms</span>
                 </div>
                 <div className="flex items-baseline gap-2">
                   <span>•</span>
@@ -100,7 +100,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-baseline gap-2">
                   <span>•</span>
-                  <span>Enterprise security</span>
+                  <span>Analytics and dashboards</span>
                 </div>
               </div>
             </div>
@@ -127,11 +127,20 @@ export default function Home() {
           <div className="mt-12 text-center bg-white p-6 rounded-xl">
             <h3 className="heading-md mb-4">Immediate Impact</h3>
             <div className="text-body mb-6 max-w-2xl mx-auto">
-              <p className="mb-3">Built a production-ready voice AI platform featuring:</p>
-              <div className="flex flex-wrap justify-center gap-2">
-                <span className="badge bg-gray-100 text-gray-700">State-of-the-art speech chatbot</span>
-                <span className="badge bg-gray-100 text-gray-700">Real-time AI evaluations</span>
-                <span className="badge bg-gray-100 text-gray-700">Scalable cloud architecture</span>
+              <p className="mb-3">
+                <span className="text-sm text-primary-600 font-medium uppercase tracking-wider block mb-2">Case Study</span>
+                For a leading enterprise client, we built and deployed a production-ready voice AI platform featuring:
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <span className="px-4 py-2 rounded-lg bg-white shadow-sm border border-gray-100 text-gray-800 font-medium">
+                  State-of-the-art speech chatbot
+                </span>
+                <span className="px-4 py-2 rounded-lg bg-white shadow-sm border border-gray-100 text-gray-800 font-medium">
+                  Real-time AI evaluations
+                </span>
+                <span className="px-4 py-2 rounded-lg bg-white shadow-sm border border-gray-100 text-gray-800 font-medium">
+                  Scalable cloud architecture
+                </span>
               </div>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
