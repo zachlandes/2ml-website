@@ -17,19 +17,19 @@ export default function ServicesOverview({ variant = 'default' }: ServicesOvervi
           </p>
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className={`card p-6 shadow-sm ${isAlternate ? 'bg-white' : 'bg-gray-50'}`}>
+          <div className={isAlternate ? 'card-on-gray' : 'card-on-white'}>
             <h3 className="heading-md mb-3 text-primary-600">RAG Systems</h3>
             <p className="text-body">
               Custom Retrieval-Augmented Generation systems for enterprise knowledge bases and documentation.
             </p>
           </div>
-          <div className={`card p-6 shadow-sm ${isAlternate ? 'bg-white' : 'bg-gray-50'}`}>
+          <div className={isAlternate ? 'card-on-gray' : 'card-on-white'}>
             <h3 className="heading-md mb-3 text-primary-600">AI Chatbots</h3>
             <p className="text-body">
               Intelligent voice and text chatbots powered by state-of-the-art language models.
             </p>
           </div>
-          <div className={`card p-6 shadow-sm ${isAlternate ? 'bg-white' : 'bg-gray-50'}`}>
+          <div className={isAlternate ? 'card-on-gray' : 'card-on-white'}>
             <h3 className="heading-md mb-3 text-primary-600">Data Engineering</h3>
             <p className="text-body">
               Production-ready data infrastructure that scales with your business needs.

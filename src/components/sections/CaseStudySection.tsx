@@ -32,19 +32,19 @@ export default function CaseStudySection({ variant = 'default' }: CaseStudySecti
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            <div className={`p-4 rounded-lg flex flex-col items-center ${isAlternate ? 'bg-white' : 'bg-gray-50'} shadow-sm`}>
+            <div className={isAlternate ? 'stats-card-on-gray' : 'stats-card-on-white'}>
               <div className="heading-lg text-primary-600">3</div>
               <div className="text-sm mt-1 text-primary-700">Weeks to Prototype</div>
             </div>
-            <div className={`p-4 rounded-lg flex flex-col items-center ${isAlternate ? 'bg-white' : 'bg-gray-50'} shadow-sm`}>
+            <div className={isAlternate ? 'stats-card-on-gray' : 'stats-card-on-white'}>
               <div className="heading-lg text-primary-600">2</div>
               <div className="text-sm mt-1 text-primary-700">Strategic Pilots</div>
             </div>
-            <div className={`p-4 rounded-lg flex flex-col items-center ${isAlternate ? 'bg-white' : 'bg-gray-50'} shadow-sm`}>
+            <div className={isAlternate ? 'stats-card-on-gray' : 'stats-card-on-white'}>
               <div className="heading-lg text-primary-600">6</div>
               <div className="text-sm mt-1 text-primary-700">Weeks to MVP</div>
             </div>
-            <div className={`p-4 rounded-lg flex flex-col items-center ${isAlternate ? 'bg-white' : 'bg-gray-50'} shadow-sm`}>
+            <div className={isAlternate ? 'stats-card-on-gray' : 'stats-card-on-white'}>
               <div className="heading-lg text-primary-600">2</div>
               <div className="text-sm mt-1 text-primary-700">Follow-on Contracts</div>
             </div>

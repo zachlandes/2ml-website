@@ -18,7 +18,7 @@ export default function TechnologyExpertise({ variant = 'default' }: TechnologyE
           </p>
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className={`card p-6 shadow-sm ${isAlternate ? 'bg-white' : 'bg-gray-50'}`}>
+          <div className={isAlternate ? 'card-on-gray' : 'card-on-white'}>
             <h3 className="heading-md mb-3 text-primary-600">AI Solutions</h3>
             <div className="space-y-2 text-base">
               <div className="flex items-baseline gap-2">
@@ -36,7 +36,7 @@ export default function TechnologyExpertise({ variant = 'default' }: TechnologyE
               </div>
             </div>
           </div>
-          <div className={`card p-6 shadow-sm ${isAlternate ? 'bg-white' : 'bg-gray-50'}`}>
+          <div className={isAlternate ? 'card-on-gray' : 'card-on-white'}>
             <h3 className="heading-md mb-3 text-primary-600">Cloud</h3>
             <div className="space-y-2 text-base">
               <div className="flex items-baseline gap-2">
@@ -53,7 +53,7 @@ export default function TechnologyExpertise({ variant = 'default' }: TechnologyE
               </div>
             </div>
           </div>
-          <div className={`card p-6 shadow-sm ${isAlternate ? 'bg-white' : 'bg-gray-50'}`}>
+          <div className={isAlternate ? 'card-on-gray' : 'card-on-white'}>
             <h3 className="heading-md mb-3 text-primary-600">Data</h3>
             <div className="space-y-2 text-base">
               <div className="flex items-baseline gap-2">

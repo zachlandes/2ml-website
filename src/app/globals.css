@@ -22,7 +22,7 @@
 
 @layer components {
   .container-width {
-    @apply max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .section-padding {
@@ -41,8 +41,33 @@
     focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-200;
   }
 
-  .card {
-    @apply bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow duration-200;
+  /* Base card styles */
+  .card-base {
+    @apply rounded-lg p-6 transition-shadow duration-200;
+  }
+
+  /* Card on white background */
+  .card-on-white {
+    @apply card-base bg-gray-50 shadow-sm hover:shadow;
+  }
+
+  /* Card on gray background */
+  .card-on-gray {
+    @apply card-base bg-white shadow-[0_2px_8px_-3px_rgba(0,0,0,0.07),0_2px_4px_-3px_rgba(0,0,0,0.06)] 
+    hover:shadow-[0_4px_12px_-6px_rgba(0,0,0,0.08),0_4px_6px_-4px_rgba(0,0,0,0.07)];
+  }
+
+  /* Stats card variants */
+  .stats-card-base {
+    @apply card-base flex flex-col items-center;
+  }
+
+  .stats-card-on-white {
+    @apply stats-card-base bg-gray-50 shadow-sm;
+  }
+
+  .stats-card-on-gray {
+    @apply stats-card-base bg-white shadow-[0_2px_8px_-3px_rgba(0,0,0,0.07),0_2px_4px_-3px_rgba(0,0,0,0.06)];
   }
 
   .nav-link {
