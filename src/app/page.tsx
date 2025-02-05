@@ -5,18 +5,21 @@ import ServicesOverview from '@/components/sections/ServicesOverview';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
 import TeamApproach from '@/components/sections/TeamApproach';
 import CTASection from '@/components/sections/CTASection';
+import CaseStudySection from '@/components/sections/CaseStudySection';
+import { SectionWrapper } from '@/components/sections/SectionWrapper';
+
+const sections = [
+  { Component: HeroSection },
+  { Component: TechnologyExpertise },
+  { Component: CaseStudySection },
+  { Component: ServicesOverview },
+  { Component: WhyChooseUs },
+  { Component: Testimonials },
+  { Component: TeamApproach },
+  { Component: CTASection },
+];
 
 export default function Home() {
-  return (
-    <>
-      <HeroSection />
-      <TechnologyExpertise />
-      <ServicesOverview />
-      <WhyChooseUs />
-      <Testimonials />
-      <TeamApproach />
-      <CTASection />
-    </>
-  );
+  return <SectionWrapper sections={sections} />;
 }
 

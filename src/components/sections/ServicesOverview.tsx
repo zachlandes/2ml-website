@@ -1,6 +1,14 @@
-export default function ServicesOverview() {
+import { BaseSectionProps } from '@/types/section';
+
+interface ServicesOverviewProps extends BaseSectionProps {
+  variant?: 'default' | 'alternate';
+}
+
+export default function ServicesOverview({ variant = 'default' }: ServicesOverviewProps) {
+  const isAlternate = variant === 'alternate';
+  
   return (
-    <section className="section-padding bg-white">
+    <section className={`section-padding ${isAlternate ? 'bg-gray-50' : 'bg-white'}`}>
       <div className="container-width">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="heading-lg mb-4">Our Expertise</h2>
@@ -9,19 +17,19 @@ export default function ServicesOverview() {
           </p>
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="card bg-gray-50 p-6 shadow-sm">
+          <div className={`card p-6 shadow-sm ${isAlternate ? 'bg-white' : 'bg-gray-50'}`}>
             <h3 className="heading-md mb-3 text-primary-600">RAG Systems</h3>
             <p className="text-body">
               Custom Retrieval-Augmented Generation systems for enterprise knowledge bases and documentation.
             </p>
           </div>
-          <div className="card bg-gray-50 p-6 shadow-sm">
+          <div className={`card p-6 shadow-sm ${isAlternate ? 'bg-white' : 'bg-gray-50'}`}>
             <h3 className="heading-md mb-3 text-primary-600">AI Chatbots</h3>
             <p className="text-body">
               Intelligent voice and text chatbots powered by state-of-the-art language models.
             </p>
           </div>
-          <div className="card bg-gray-50 p-6 shadow-sm">
+          <div className={`card p-6 shadow-sm ${isAlternate ? 'bg-white' : 'bg-gray-50'}`}>
             <h3 className="heading-md mb-3 text-primary-600">Data Engineering</h3>
             <p className="text-body">
               Production-ready data infrastructure that scales with your business needs.

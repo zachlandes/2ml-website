@@ -1,9 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { BaseSectionProps } from '@/types/section';
 
-export default function HeroSection() {
+interface HeroSectionProps extends BaseSectionProps {
+  // Add any HeroSection-specific props here
+}
+
+export default function HeroSection({ variant = 'default' }: HeroSectionProps) {
+  const isAlternate = variant === 'alternate';
+  
   return (
-    <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
+    <section className={`section-padding ${isAlternate ? 'bg-gray-50' : 'bg-white'}`}>
       <div className="container-width">
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-8">
