@@ -18,43 +18,104 @@ export default function Services() {
       {/* Main services section */}
       <section className="section-padding bg-white">
         <div className="container-width">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
             <div className="card">
-              <h2 className="heading-md mb-4 text-primary-600">RAG Systems</h2>
-              <p className="text-body mb-4">
-                Custom Retrieval-Augmented Generation systems for enterprise knowledge bases and documentation.
+              <h2 className="heading-md text-sm sm:text-base lg:text-lg mb-4 text-primary-600">Chat with Your Documents</h2>
+              <p className="text-body mb-6 text-gray-600">
+                Transform your documentation into an intelligent chat system that provides instant, accurate answers.
               </p>
-              <ul className="text-body space-y-2">
-                <li>• Document processing and indexing</li>
-                <li>• Custom embedding models</li>
-                <li>• Semantic search optimization</li>
-                <li>• Integration with LLMs</li>
+              <ul className="text-body space-y-3">
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>Smart document understanding and organization</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>AI-powered search that understands context (using RAG technology)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>Natural conversations with your documentation</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>Seamless integration with leading AI models</span>
+                </li>
               </ul>
             </div>
             
             <div className="card">
-              <h2 className="heading-md mb-4 text-primary-600">AI Chatbots</h2>
-              <p className="text-body mb-4">
-                Intelligent voice and text chatbots powered by state-of-the-art language models.
+              <h2 className="heading-md text-sm sm:text-base lg:text-lg mb-4 text-primary-600">AI Assistants & Process Automation</h2>
+              <p className="text-body mb-6 text-gray-600">
+                Enhance customer support and streamline operations with intelligent AI agents that automate workflows.
               </p>
-              <ul className="text-body space-y-2">
-                <li>• Custom LLM fine-tuning</li>
-                <li>• Voice recognition integration</li>
-                <li>• Multi-language support</li>
-                <li>• Enterprise security compliance</li>
+              <ul className="text-body space-y-3">
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>24/7 customer support with automated request routing</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>Workflow automation for common business processes</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>Multi-language support and custom AI personalities</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>Automated task handling and response management</span>
+                </li>
               </ul>
             </div>
 
             <div className="card">
-              <h2 className="heading-md mb-4 text-primary-600">Data Engineering</h2>
-              <p className="text-body mb-4">
-                Production-ready data infrastructure that scales with your business needs.
+              <h2 className="heading-md text-sm sm:text-base lg:text-lg mb-4 text-primary-600">AI-Powered Product Development</h2>
+              <p className="text-body mb-6 text-gray-600">
+                Transform your products with AI capabilities or build new AI-driven solutions from the ground up.
               </p>
-              <ul className="text-body space-y-2">
-                <li>• Data lake architecture</li>
-                <li>• ETL pipeline development</li>
-                <li>• Real-time data processing</li>
-                <li>• Data quality monitoring</li>
+              <ul className="text-body space-y-3">
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>Custom AI features and product enhancements</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>Intelligent automation and decision systems</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>Computer vision and natural language solutions</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>Scalable AI infrastructure and deployment</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="card">
+              <h2 className="heading-md text-sm sm:text-base lg:text-lg mb-4 text-primary-600">AI Strategy & Team Development</h2>
+              <p className="text-body mb-6 text-gray-600">
+                Develop your organization's AI capabilities through strategic planning and hands-on training.
+              </p>
+              <ul className="text-body space-y-3">
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>AI readiness assessment and roadmap development</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>Technology selection and implementation planning</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>Custom training programs and workshops</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-2 text-lg">•</span>
+                  <span>ROI analysis and adoption best practices</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -67,30 +128,30 @@ export default function Services() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="heading-lg mb-4">Our Process</h2>
             <p className="text-body">
-              We follow a structured approach to ensure successful implementation of AI solutions.
+              We follow a structured yet flexible approach that can be adapted to your timeline requirements - from rapid deployment to comprehensive enterprise rollouts.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
             <div className="card">
-              <h3 className="heading-md mb-3 text-primary-600">1. Discovery</h3>
+              <h3 className="heading-md text-sm sm:text-base lg:text-lg mb-3 text-primary-600 hyphens-none min-w-0">1.&nbsp;Discovery</h3>
               <p className="text-body">
                 Understanding your business needs and technical requirements.
               </p>
             </div>
             <div className="card">
-              <h3 className="heading-md mb-3 text-primary-600">2. Design</h3>
+              <h3 className="heading-md text-sm sm:text-base lg:text-lg mb-3 text-primary-600 hyphens-none min-w-0">2.&nbsp;Design</h3>
               <p className="text-body">
                 Creating a detailed solution architecture and implementation plan.
               </p>
             </div>
             <div className="card">
-              <h3 className="heading-md mb-3 text-primary-600">3. Development</h3>
+              <h3 className="heading-md text-sm sm:text-base lg:text-lg mb-3 text-primary-600 hyphens-none min-w-0">3.&nbsp;Development</h3>
               <p className="text-body">
                 Iterative implementation with regular feedback and testing.
               </p>
             </div>
             <div className="card">
-              <h3 className="heading-md mb-3 text-primary-600">4. Deployment</h3>
+              <h3 className="heading-md text-sm sm:text-base lg:text-lg mb-3 text-primary-600 hyphens-none min-w-0">4.&nbsp;Deployment</h3>
               <p className="text-body">
                 Production deployment with monitoring and ongoing support.
               </p>

@@ -75,7 +75,7 @@ export default function Home() {
               <div className="space-y-2 text-base">
                 <div className="flex items-baseline gap-2">
                   <span>•</span>
-                  <span>AWS/GCP managed services</span>
+                  <span>AWS/GCP/Azure and neo-cloud managed services</span>
                 </div>
                 <div className="flex items-baseline gap-2">
                   <span>•</span>
@@ -96,28 +96,11 @@ export default function Home() {
                 </div>
                 <div className="flex items-baseline gap-2">
                   <span>•</span>
-                  <span>Real-time pipelines</span>
+                  <span>Real-time pipelines & monitoring</span>
                 </div>
                 <div className="flex items-baseline gap-2">
                   <span>•</span>
                   <span>Analytics and dashboards</span>
-                </div>
-              </div>
-            </div>
-            <div className="card p-6">
-              <h3 className="heading-md mb-3 text-primary-600">MLOps</h3>
-              <div className="space-y-2 text-base">
-                <div className="flex items-baseline gap-2">
-                  <span>•</span>
-                  <span>CI/CD pipelines</span>
-                </div>
-                <div className="flex items-baseline gap-2">
-                  <span>•</span>
-                  <span>Performance monitoring</span>
-                </div>
-                <div className="flex items-baseline gap-2">
-                  <span>•</span>
-                  <span>Drift detection</span>
                 </div>
               </div>
             </div>
@@ -223,7 +206,7 @@ export default function Home() {
             <div className="card">
               <h3 className="heading-md mb-3 text-primary-600">Expertise & Experience</h3>
               <p className="text-body">
-                Our team brings years of experience in implementing AI solutions across various industries.
+                Our team brings years of experience in implementing AI & data solutions across various industries.
               </p>
             </div>
             <div className="card">
