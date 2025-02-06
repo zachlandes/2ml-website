@@ -14,8 +14,6 @@ const sections = [
   { Component: CaseStudySection },
   { Component: ServicesOverview },
   { Component: WhyChooseUs },
-  { Component: Testimonials },
-  { Component: TeamApproach },
   { Component: CTASection },
 ];
 

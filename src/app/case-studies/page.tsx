@@ -61,7 +61,7 @@ export default function CaseStudies() {
                   <div className="lg:w-1/2">
                     <div className="flex items-center gap-3 mb-4">
                       <h2 className="heading-md text-primary-600">{study.title}</h2>
-                      <span className="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                      <span className="text-sm font-medium text-gray-500 bg-gray-50 px-3 py-1 rounded-full">
                         {study.industry}
                       </span>
                     </div>

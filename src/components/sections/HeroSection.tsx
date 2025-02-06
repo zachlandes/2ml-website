@@ -32,7 +32,7 @@ export default function HeroSection({ variant = 'default' }: HeroSectionProps) {
             AI Solutions Built for Scale
           </h1>
           <p className="text-body mb-8 text-lg">
-            We're a founder-led AI firm with the ability to scale teams to meet project demands. From rapid prototypes to enterprise deployments; from product management to implementing the latest AI research - we bring the right expertise for your challenge.
+            We're a partner-led AI & data firm that brings exceptional engineering, communication, and results-driven execution to your business. From rapid prototypes to enterprise deployments; from technical product management to implementing the latest AI research - we bring the right expertise for your challenge.
           </p>
           <div className="flex items-center justify-center gap-x-4">
             <Link href="/services" className="btn-primary">

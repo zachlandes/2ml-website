@@ -16,7 +16,7 @@ export default function CaseStudySection({ variant = 'default' }: CaseStudySecti
           <h2 className="heading-lg mb-6">Immediate Impact</h2>
           <div className="text-body mb-8">
             <p className="mb-6">
-              For a leading enterprise client, we built and deployed a production-ready voice AI platform featuring:
+              For a leading enterprise client, we built and deployed a production-ready full-stack app with realtime voice AI, featuring:
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-12">
               <span className="px-4 py-2 rounded-lg bg-primary-50 border border-primary-100 text-primary-700 font-medium">
@@ -60,9 +60,11 @@ export default function CaseStudySection({ variant = 'default' }: CaseStudySecti
               <span className="badge bg-accent-50 text-accent-700">Ethical alignment</span>
               <span className="badge bg-accent-50 text-accent-700">Production readiness</span>
             </div>
+            {/*
             <Link href="/case-studies/voice-ai" className="btn-secondary">
               Read Case Study →
             </Link>
+            */}
           </div>
         </div>
       </div>
