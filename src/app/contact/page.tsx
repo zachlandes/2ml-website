@@ -10,10 +10,30 @@ export default function Contact() {
     message: '',
   });
 
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement form submission logic
-    console.log('Form submitted:', formData);
+    setStatus('loading');
+
+    try {
+      const response = await fetch('https://formspree.io/f/meoelkow', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error();
+      }
+
+      setStatus('success');
+      setFormData({ name: '', email: '', company: '', message: '' });
+    } catch (error) {
+      setStatus('error');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -42,6 +62,22 @@ export default function Contact() {
       <section className="section-padding bg-white">
         <div className="container-width">
           <div className="max-w-xl mx-auto">
+            {status === 'success' ? (
+              <div className="rounded-md bg-green-50 p-4 mb-6">
+                <p className="text-green-800">
+                  Thank you for your message! We'll get back to you soon.
+                </p>
+              </div>
+            ) : null}
+
+            {status === 'error' ? (
+              <div className="rounded-md bg-red-50 p-4 mb-6">
+                <p className="text-red-800">
+                  Failed to send message. Please try again or email us directly.
+                </p>
+              </div>
+            ) : null}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -52,6 +88,7 @@ export default function Contact() {
                     type="text"
                     name="name"
                     id="name"
+                    required
                     className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
                     placeholder="Your name"
                     value={formData.name}
@@ -69,6 +106,7 @@ export default function Contact() {
                     type="email"
                     name="email"
                     id="email"
+                    required
                     className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
                     placeholder="you@company.com"
                     value={formData.email}
@@ -103,6 +141,7 @@ export default function Contact() {
                     id="message"
                     name="message"
                     rows={4}
+                    required
                     className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
                     placeholder="Tell us about your project"
                     value={formData.message}
@@ -114,9 +153,10 @@ export default function Contact() {
               <div>
                 <button
                   type="submit"
-                  className="btn-primary w-full"
+                  disabled={status === 'loading'}
+                  className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {status === 'loading' ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
             </form>
