@@ -1,6 +1,6 @@
 import Testimonials from '@/components/Testimonials';
 import HeroSection from '@/components/sections/HeroSection';
-import TechnologyExpertise from '@/components/sections/TechnologyExpertise';
+import AICapabilities from '@/components/sections/AICapabilities';
 import ServicesOverview from '@/components/sections/ServicesOverview';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
 import TeamApproach from '@/components/sections/TeamApproach';
@@ -10,7 +10,7 @@ import { SectionWrapper } from '@/components/sections/SectionWrapper';
 
 const sections = [
   { Component: HeroSection },
-  { Component: TechnologyExpertise },
+  { Component: AICapabilities },
   { Component: CaseStudySection },
   { Component: ServicesOverview },
   { Component: WhyChooseUs },
