@@ -1,3 +1,4 @@
+import { Linkedin } from 'lucide-react';
 import Link from 'next/link';
 
 export default function About() {
@@ -67,6 +68,71 @@ export default function About() {
         </div>
       </section>
 
+      {/* Founders / Team section */}
+      <section className="section-padding bg-white">
+        <div className="container-width">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="heading-lg mb-4">Meet Our Founders</h2>
+            <p className="text-body">
+              Our leadership team brings decades of combined experience in AI, data, and business strategy.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Zach's Bio */}
+            <div className="card flex flex-col items-center">
+              <img
+                src="/images/zach.png"
+                alt="Zach Landes"
+                className="rounded-full w-32 h-32 object-cover mb-4"
+              />
+              <h3 className="heading-md text-primary-600 mb-2">Zach Landes</h3>
+              <div className="text-body text-left space-y-4">
+                <p>
+                  Zach is a founding partner of 2ML, a software engineer, product manager, and former economist with over a decade of experience in AI- and data-driven software.
+                </p>
+                
+                <p>
+                  He began his career as the first employee at Trumpet (later Ness), an early AI-powered restaurant recommendation app that raised over $5 million in venture funding—including from former Google CEO Eric Schmidt—and won an Apple Best of the App Store award before being acquired by OpenTable. After earning an MSc in Economic History from the London School of Economics, Zach pursued economic research at UC Berkeley and UCLA, coauthoring work on social mobility that was featured in The Economist and cited by Nobel laureates.
+                </p>
+                
+                <p>
+                  Returning to tech, he was a product leader on analytics at Walmart.com, then joined Nielsen as a self-taught software engineer, where he helped architect a $100M ARR metadata platform powering global video streaming. Beyond 2ML, Zach has served as Board President of a nonprofit health center, volunteers for social causes, and enjoys exploring new AI methods, rock climbing, and street photography. He lives in San Francisco.
+                </p>
+              </div>
+              <Link 
+                href="https://www.linkedin.com/in/zachlandes/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 text-primary-600 hover:text-primary-700"
+              >
+                <Linkedin size={24} />
+              </Link>
+            </div>
+
+            {/* Partner's Bio Placeholder */}
+            <div className="card flex flex-col items-center">
+              <img
+                src="/images/kevin.png"
+                alt="Kevin Juszczyk"
+                className="rounded-full w-32 h-32 object-cover mb-4"
+              />
+              <h3 className="heading-md text-primary-600 mb-2">Partner Name</h3>
+              <p className="text-body text-left">
+                Bio coming soon.
+              </p>
+              <Link 
+                href="https://www.linkedin.com/in/kevin-juszczyk-b9573531b/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 text-primary-600 hover:text-primary-700"
+              >
+                <Linkedin size={24} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA section */}
       <section className="section-padding bg-white">
         <div className="container-width">
@@ -83,4 +149,4 @@ export default function About() {
       </section>
     </>
   );
-} 
+}
