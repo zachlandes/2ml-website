@@ -116,7 +116,7 @@ export default function About() {
                 alt="Kevin Juszczyk"
                 className="rounded-full w-32 h-32 object-cover mb-4"
               />
-              <h3 className="heading-md text-primary-600 mb-2">Partner Name</h3>
+              <h3 className="heading-md text-primary-600 mb-2">Kevin Juszczyk</h3>
               <p className="text-body text-left">
                 Bio coming soon.
               </p>
