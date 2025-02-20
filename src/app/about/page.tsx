@@ -117,9 +117,20 @@ export default function About() {
                 className="rounded-full w-32 h-32 object-cover mb-4"
               />
               <h3 className="heading-md text-primary-600 mb-2">Kevin Juszczyk</h3>
-              <p className="text-body text-left">
-                Bio coming soon.
-              </p>
+              <div className="text-body text-left space-y-4">
+                <p>
+                  Kevin Juszczyk is a founding partner of 2ML with decades of experience in software and database design and development, cloud and local IT systems design and administration.
+                </p>
+                
+                <p>
+                  At Health Decisions, a medical claims audit firm where he was CTO, he migrated the company's process off of a mainframe/magnetic tape/COBOL platform to a modern Microsoft Windows PC platform, allowing the company to scale revenue over 20x. Kevin holds two patents related to protecting patient personally identifiable information and streamlining the workflow of health care providers when treating uninsured patients.
+                </p>
+                
+                <p>
+                  Later, at Nielsen, Kevin was a key architect of the company's metadata globalization effort which expanded the video product reach to over 100 countries, while transitioning to a modern data platform on AWS using Spark, HDFS and HBase. As a Staff Engineer, he on-boarded new developers, refined the team's internal workflow, and provided crucial insight and guidance to the product team. <br />
+                  He is also an electrical engineer and the co-founder of a successful hardware synthesizer company, Groove Synthesis.
+                </p>
+              </div>
               <Link 
                 href="https://www.linkedin.com/in/kevin-juszczyk-b9573531b/"
                 target="_blank"
