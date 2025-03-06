@@ -179,7 +179,7 @@ export default function Contact() {
               <div className="card">
                 <h2 className="heading-md mb-4 text-primary-600">Contact Info</h2>
                 <p className="text-body">
-                  Email: zach@2ml.com<br />
+                  Email: info@2ml.com<br />
                 </p>
               </div>
             </div>
