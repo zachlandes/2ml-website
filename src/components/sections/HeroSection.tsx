@@ -31,8 +31,8 @@ export default function HeroSection({ variant = 'default' }: HeroSectionProps) {
           <h1 className="heading-xl mb-6">
             AI Solutions Built for Scale
           </h1>
-          <p className="text-body mb-8 text-lg">
-            We're a new AI consulting firm—but our deep, recent industry experience, in successful startups and fortune 500 businesses, sets us apart. <br />We bring specialized AI expertise, product leadership, strong communication, and personalized attention directly to your projects. No junior engineers or distant time zones—just practical insights and rapid AI solutions.
+          <p className="text-body mb-8 text-lg text-justify">
+            We're a new AI consulting firm—but our deep, recent industry experience, in successful Silicon Valley startups and fortune 500 businesses, sets us apart. We bring specialized AI expertise, product leadership, strong communication, and personalized attention directly to your projects. No junior engineers or distant time zones—just practical insights and rapid AI solutions.
           </p>
           <div className="flex items-center justify-center gap-x-4">
             <Link href="/services" className="btn-primary">
