@@ -18,7 +18,7 @@ export default defineConfig({
   webServer: {
     command: `npx next build && npx serve out --no-clipboard -l ${PORT}`,
     url: `http://127.0.0.1:${PORT}`,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
     timeout: 180_000,
   },
 });
