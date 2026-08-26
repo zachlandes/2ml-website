@@ -34,7 +34,8 @@ export default function HeroSection({ variant = 'default' }: HeroSectionProps) {
           <p className="text-body mb-8 text-lg text-justify">
             We're an AI consulting firm with deep, recent industry experience, in successful Silicon Valley startups and fortune 500 businesses. We bring specialized AI expertise, product leadership, strong communication, and personalized attention directly to your projects. No junior engineers or distant time zones—just practical insights and rapid AI solutions.
           </p>
-          <div className="flex items-center justify-center gap-x-4">
+          {/* Wraps so both buttons stay inside the viewport on narrow phones */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <Link href="/services" className="btn-primary">
               Our Services
             </Link>
