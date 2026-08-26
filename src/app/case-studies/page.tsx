@@ -59,8 +59,10 @@ export default function CaseStudies() {
               <div key={study.title} className="card">
                 <div className="flex flex-col lg:flex-row gap-8">
                   <div className="lg:w-1/2">
-                    <div className="flex items-center gap-3 mb-4">
-                      <h2 className="heading-md text-primary-600">{study.title}</h2>
+                    {/* Wraps so the industry pill drops below the title instead of
+                        pushing the page wider than the viewport on narrow phones */}
+                    <div className="flex flex-wrap items-center gap-3 mb-4">
+                      <h2 className="heading-md text-primary-600 min-w-0">{study.title}</h2>
                       <span className="text-sm font-medium text-gray-500 bg-gray-50 px-3 py-1 rounded-full">
                         {study.industry}
                       </span>
