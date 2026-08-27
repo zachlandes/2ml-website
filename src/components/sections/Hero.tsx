@@ -37,10 +37,6 @@ export default function Hero() {
               </div>
             ))}
         </dl>
-        <p className="text-sm leading-[1.6] text-muted-faint">
-          Nielsen. Walmart. First hire at a startup OpenTable acquired. Two patents in patient data
-          protection.
-        </p>
       </div>
     </section>
   );

@@ -117,6 +117,7 @@ Permissions can be pursued later and the entries upgraded then.
 - On a phone the hero proof column, the featured entry and the three-day entry stacked into three voice-AI items in a row, and the hero column repeated the featured engagement under the same "Featured work" label.
   Fix: the hero column is now a strip of all three engagements' numbers (3 wks, 2,600+, 3 days), so the first proof a reader sees is breadth; and the clinical entry sits between the two voice stories on Home and Work, so voice never appears twice in a row while still not leading.
 - "Read all three" sat between entry one and entries two and three on a phone, pointing at content directly below it. It now follows all three.
+- The hero strip carried a biographical line (Nielsen, Walmart, OpenTable, the patents) under the "Three engagements" label, so it read as engagements. Removed: every fact in it already appears under the right name in "Who does the work" on the same page. If it ever returns to the hero it needs its own label, ruled off from the stats.
 
 ### Layout consequences
 
