@@ -62,7 +62,8 @@ Leading with the clinical tool was considered and rejected because it has no AI 
   Day one: after learning what they wanted, Zach built the foundation himself, essentially solo apart from meetings.
   Days two and three: still building as an IC, and now leading: he split the remaining work into pieces, the CTO told him which engineer fit each, he met each engineer and got them clear on what to build so it integrated into the whole in time for Friday's demo.
   The structure is a colon, not commas: three days, then what the three days were.
-- Claim strength: "they pitched it that Friday" is the safe claim; "sold it" is a claim about their outcome and stays out unless the owner confirms he stands behind it.
+- Claim boundary (settled 2026-08-27): the Friday pitch **led to a preliminary commitment from the exchange**. That is the claim, exactly.
+  Not "sold"; not the $1.1M figure; and no stated link between that meeting and the $1.1M the CEO mentioned three weeks later, because the owner does not know how the two are related.
 - Two distinct positives here; keep them apart. **During:** he led their engineers through the build, coordinating the team with the CTO from day one. **After:** they took it from there.
   This entry is named for expertise and leadership, so the heading carries the during-the-build claim; the handoff is a sentence in the body, not the headline.
 - By Friday they pitched it to a major crypto exchange.
