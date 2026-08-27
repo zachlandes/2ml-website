@@ -317,6 +317,50 @@ test.describe('footer', () => {
   });
 });
 
+test.describe('settled content decisions', () => {
+  test('Home presents three distinct engagements and leads its proof with speed', async ({ page }) => {
+    await page.goto('/');
+
+    const main = page.locator('main');
+    for (const heading of [
+      'A voice product, shaped and shipped alongside its founders',
+      'A working agent in three days, leading their engineers through the build',
+      'A clinical assessment, rebuilt as software',
+    ]) {
+      await expect(main.getByRole('heading', { name: heading })).toBeVisible();
+    }
+    await expect(main.getByText('2,600+', { exact: true })).toBeVisible();
+    await expect(main.getByText('3 weeks to a speaking voice-AI prototype. 6 to an MVP.')).toBeVisible();
+    await expect(main.getByText(/Two pilots followed, and they kept us on\. Nielsen/)).toBeVisible();
+  });
+
+  test('Work renders the three engagements as equal rows with the settled facts', async ({ page }) => {
+    await page.goto('/work');
+
+    const rows = page.locator('main > section.section-block');
+    await expect(rows).toHaveCount(3);
+    await expect(rows.nth(0).getByText('3 wks', { exact: true })).toBeVisible();
+    await expect(rows.nth(1).getByText('3 days', { exact: true })).toBeVisible();
+    await expect(rows.nth(2).getByText('2,600+', { exact: true })).toBeVisible();
+    await expect(rows.nth(1)).toContainText('foundation on day one, alone');
+    await expect(rows.nth(1)).toContainText('preliminary commitment');
+    await expect(rows.nth(2)).toContainText('FERPA-grade data');
+
+    const publicCopy = await page.locator('main').innerText();
+    expect(publicCopy).not.toMatch(/4,000|HIPAA|\$\d/);
+  });
+
+  test('Services and Contact show the approved removals and location', async ({ page }) => {
+    await page.goto('/services');
+    await expect(page.getByRole('heading', { level: 1, name: 'What we build' })).toBeVisible();
+    await expect(page.locator('main')).not.toContainText('24/7 customer support');
+
+    await page.goto('/contact');
+    await expect(page.locator('main')).toContainText('San Francisco, California');
+    await expect(page.locator('main')).not.toContainText('Bay Area');
+  });
+});
+
 test.describe('metadata', () => {
   const expected = {
     '/': {

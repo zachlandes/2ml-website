@@ -7,8 +7,8 @@ The rewrite itself is a single pass in the owner's own voice, still to come.
 ## Facts to correct (not matters of taste)
 
 - The voice-AI client was a **startup**, not a large enterprise.
-  Live production and the PR branch both say "leading/large enterprise" in four places: `FeaturedWork.tsx` and three spots in `work/page.tsx`.
-  The surrounding sentence ("needed to know whether voice AI could work before committing budget") is an enterprise-procurement story and should be rethought with the noun.
+  At review time, live production and the PR branch said "leading/large enterprise" in four places: `FeaturedWork.tsx` and three spots in `work/page.tsx`.
+  The prior surrounding sentence ("needed to know whether voice AI could work before committing budget") was an enterprise-procurement story and needed to be rethought with the noun.
 - "Two pilots, then two further contracts" is ambiguous: a reader can take it as business the client won with the product rather than engagements they gave us.
   The second reading is the more impressive one, so a reader who picks it feels misled.
   Do not use the word "contracts"; say what the relationship was (they kept us on).
@@ -21,7 +21,7 @@ The rewrite itself is a single pass in the owner's own voice, still to come.
 
 - "The right thing, built well." stays for now.
   Owner's verdict: not bad, still up for consideration.
-- The home stat line currently mixes capability proof (3 weeks to prototype, 6 to MVP) with relationship proof (pilots, follow-on work).
+- The prior home stat line mixed capability proof (3 weeks to prototype, 6 to MVP) with relationship proof (pilots, follow-on work).
   Lead with the speed; demote the continued relationship to a supporting line or bullet.
 - "In practice" as a section label is retired.
   It reads as an editorial-magazine flourish and says nothing.
@@ -114,15 +114,15 @@ Permissions can be pursued later and the entries upgraded then.
 
 ### Layout consequences
 
-- The current right-column paragraph under "Voice AI, from open question to production" reads as a footnote to the voice-AI entry.
+- The former right-column paragraph under "Voice AI, from open question to production" read as a footnote to the voice-AI entry.
   Give each entry its own heading and body of equal weight.
 - No logo elements in this release; if logos come later, they go inside an entry as an optional element, never in a shared strip a third entry is missing from.
-- Home features one entry (the voice-AI build, for the product/engineering-leader audience); the other two live on Work.
+- Home leads with the voice-AI build for the product/engineering-leader audience, then shows the other two as entries in their own right; Work presents all three as co-equal rows.
 
 ## Services page
 
-- The subtitle ("We offer comprehensive AI and data engineering solutions...") is the old site's copy carried forward.
-  It is the generic-AI-shop sentence the redesign exists to retire; first line to go.
+- The removed subtitle ("We offer comprehensive AI and data engineering solutions...") was the old site's copy carried forward.
+  It was the generic-AI-shop sentence the redesign exists to retire.
 - "Agents that work inside your systems": keep the heading and the full scope, from agentic capability inside a larger build to an agent that is the product.
   Drop the 24/7-customer-support use case: not something we have done or been asked to do, and it is the productized segment where we are least differentiated.
   Workflow automation and document/context work can stay in some form; they are true of the work, just no longer the headline.
@@ -131,14 +131,14 @@ Permissions can be pursued later and the entries upgraded then.
 
 ## Contact page
 
-- "San Francisco Bay Area, California" is wrong: the company is in San Francisco itself.
-  Carried forward from the old site; live in production today.
-  The footer already says "San Francisco" correctly, so the contact block should match it.
+- "San Francisco Bay Area, California" was wrong: the company is in San Francisco itself.
+  At review time, it had been carried forward from the old site and was live in production.
+  The footer already said "San Francisco" correctly, so the contact block needed to match it.
 - Otherwise the page is the approved headline and reply promise plus the existing Formspree form.
 
 ## About page
 
-- Fine as is apart from the "nobody else between you and the code" line (see positioning).
+- The only approved change was replacing the "nobody else between you and the code" line (see positioning).
 - Bios are already in a real voice; if rewritten it is for length and emphasis, not authenticity.
 
 ## Brand mark
