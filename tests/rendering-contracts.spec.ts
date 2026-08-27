@@ -1,11 +1,15 @@
 import { test, expect, type Page } from '@playwright/test';
 
-const ROUTES = ['/', '/about', '/services', '/contact', '/case-studies'];
+const ROUTES = ['/', '/work', '/services', '/about', '/contact'];
 
 // 280 is the narrowest phone viewport in circulation (folded Galaxy Fold);
-// 1280 is the width at which the layout stops growing (max-w-7xl)
-const MOBILE_WIDTHS = [280, 320, 375, 390, 430];
+// 1440 is the Direction B artboard width
+const MOBILE_WIDTHS = [280, 320, 360, 375, 390, 430];
 const DESKTOP_WIDTHS = [768, 1280, 1440];
+
+// Direction B palette, from the approved artboards
+const PAPER = [250, 247, 242];
+const ACCENT = [154, 75, 18];
 
 function relativeLuminance([r, g, b]: number[]): number {
   const channel = (v: number) => {
@@ -48,105 +52,221 @@ test.describe('no horizontal overflow', () => {
       });
     }
   }
+});
 
-  test('the mobile menu does not widen the page', async ({ page }) => {
+test.describe('navigation', () => {
+  test('the toggle reports its state and reveals the panel', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 900 });
     await page.goto('/');
-    await page.getByRole('button').first().click();
-    await expect(page.getByRole('link', { name: 'Home' })).toBeVisible();
+
+    const toggle = page.getByRole('button', { name: 'Menu' });
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    await expect(page.locator('#mobile-nav')).toBeHidden();
+
+    await toggle.click();
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.locator('#mobile-nav').getByRole('link', { name: 'Work' })).toBeVisible();
 
     const { scrollWidth, clientWidth } = await documentWidths(page);
     expect(scrollWidth).toBeLessThanOrEqual(clientWidth);
+
+    // Escape closes it and hands focus back, so keyboard users are not stranded
+    await page.keyboard.press('Escape');
+    await expect(page.locator('#mobile-nav')).toBeHidden();
+    await expect(toggle).toBeFocused();
+  });
+
+  test('the current route is marked for assistive technology', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto('/services');
+    await expect(page.getByRole('link', { name: 'Services' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    );
+  });
+
+  test('the persistent CTA reaches the contact page', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto('/');
+    await page.getByRole('navigation').getByRole('link', { name: 'Talk to a partner' }).click();
+    await expect(page).toHaveURL(/\/contact$/);
   });
 });
 
 test.describe('shared component styles are defined', () => {
-  test('.card renders as a padded, bordered surface', async ({ page }) => {
-    await page.goto('/services');
-    const card = page.locator('.card').first();
-    await expect(card).toBeVisible();
+  // Tailwind cannot warn about a class that is neither a utility nor defined in
+  // globals.css, so each shared class is asserted to produce real computed style
+  test('.container-editorial gutters the page', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+    const style = await page.locator('.container-editorial').first().evaluate((el) => {
+      const s = getComputedStyle(el);
+      return { paddingX: parseFloat(s.paddingLeft), maxWidth: parseFloat(s.maxWidth) };
+    });
+    expect(style.paddingX).toBe(64);
+    expect(style.maxWidth).toBe(1440);
+  });
 
-    const style = await card.evaluate((el) => {
+  test('.section-block rules off the band above it', async ({ page }) => {
+    await page.goto('/');
+    const style = await page.locator('.section-block').first().evaluate((el) => {
+      const s = getComputedStyle(el);
+      return { borderTop: parseFloat(s.borderTopWidth), paddingTop: parseFloat(s.paddingTop) };
+    });
+    expect(style.borderTop).toBeGreaterThan(0);
+    expect(style.paddingTop).toBeGreaterThan(0);
+  });
+
+  test('.eyebrow is a spaced uppercase accent label', async ({ page }) => {
+    await page.goto('/');
+    const style = await page.locator('.eyebrow').first().evaluate((el) => {
       const s = getComputedStyle(el);
       return {
-        padding: parseFloat(s.paddingTop),
+        transform: s.textTransform,
+        tracking: parseFloat(s.letterSpacing),
+        weight: Number(s.fontWeight),
+        color: s.color,
+      };
+    });
+    expect(style.transform).toBe('uppercase');
+    expect(style.tracking).toBeGreaterThan(0);
+    expect(style.weight).toBeGreaterThanOrEqual(600);
+    expect(style.color).toBe('rgb(154, 75, 18)');
+  });
+
+  test('.btn-solid is an ink pill with paper text', async ({ page }) => {
+    await page.goto('/');
+    const style = await page.locator('.btn-solid').first().evaluate((el) => {
+      const s = getComputedStyle(el);
+      return {
+        radius: parseFloat(s.borderTopLeftRadius),
+        paddingX: parseFloat(s.paddingLeft),
+        background: s.backgroundColor,
+        color: s.color,
+      };
+    });
+    expect(style.radius).toBeGreaterThan(50);
+    expect(style.paddingX).toBeGreaterThan(0);
+    expect(style.background).toBe('rgb(28, 25, 23)');
+    expect(style.color).toBe('rgb(250, 247, 242)');
+  });
+
+  test('.btn-outline is an outlined pill', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto('/');
+    const style = await page.locator('.btn-outline').first().evaluate((el) => {
+      const s = getComputedStyle(el);
+      return {
         radius: parseFloat(s.borderTopLeftRadius),
         borderWidth: parseFloat(s.borderTopWidth),
-        background: s.backgroundColor,
+        color: s.color,
       };
     });
-
-    // An undefined `.card` collapses to zero padding, no radius and no border
-    expect(style.padding).toBeGreaterThan(0);
-    expect(style.radius).toBeGreaterThan(0);
+    expect(style.radius).toBeGreaterThan(50);
     expect(style.borderWidth).toBeGreaterThan(0);
-    expect(style.background).not.toBe('rgba(0, 0, 0, 0)');
+    expect(style.color).toBe('rgb(28, 25, 23)');
   });
 
-  test('.heading-sm sits between .heading-md and body text', async ({ page }) => {
-    await page.goto('/case-studies');
+  test('.link-accent is underlined and accented', async ({ page }) => {
+    await page.goto('/');
+    const style = await page.locator('.link-accent').first().evaluate((el) => {
+      const s = getComputedStyle(el);
+      return { color: s.color, decoration: s.textDecorationLine };
+    });
+    expect(style.color).toBe('rgb(154, 75, 18)');
+    expect(style.decoration).toContain('underline');
+  });
+
+  test('.rule-item carries a hairline above its heading', async ({ page }) => {
+    await page.goto('/');
+    const style = await page.locator('.rule-item').first().evaluate((el) => {
+      const s = getComputedStyle(el);
+      return { borderTop: parseFloat(s.borderTopWidth), paddingTop: parseFloat(s.paddingTop) };
+    });
+    expect(style.borderTop).toBeGreaterThan(0);
+    expect(style.paddingTop).toBeGreaterThan(0);
+  });
+
+  test('the heading and body scales are ordered', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/services');
 
     const sizes = await page.evaluate(() => {
-      const size = (sel: string) => parseFloat(getComputedStyle(document.querySelector(sel)!).fontSize);
+      const size = (sel: string) =>
+        parseFloat(getComputedStyle(document.querySelector(sel)!).fontSize);
       return {
-        sm: size('.heading-sm'),
-        md: size('.heading-md'),
-        body: size('.text-body'),
-        weight: getComputedStyle(document.querySelector('.heading-sm')!).fontWeight,
+        h1: size('h1'),
+        item: size('.heading-item'),
+        lead: size('.body-lead'),
+        copy: size('.body-copy'),
       };
     });
 
-    expect(sizes.sm).toBeGreaterThan(sizes.body);
-    expect(sizes.sm).toBeLessThan(sizes.md);
-    expect(Number(sizes.weight)).toBeGreaterThanOrEqual(700);
+    expect(sizes.h1).toBeGreaterThan(sizes.item);
+    expect(sizes.item).toBeGreaterThan(sizes.lead);
+    expect(sizes.lead).toBeGreaterThan(sizes.copy);
   });
 
-  test('.badge renders as a pill', async ({ page }) => {
+  test('.heading-section sits between the page title and item headings', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/');
-    const badge = page.locator('.badge').first();
-    await expect(badge).toBeVisible();
+    const sizes = await page.evaluate(() => {
+      const size = (sel: string) =>
+        parseFloat(getComputedStyle(document.querySelector(sel)!).fontSize);
+      return { h1: size('h1'), section: size('.heading-section'), item: size('.heading-item') };
+    });
+    expect(sizes.section).toBeLessThan(sizes.h1);
+    expect(sizes.section).toBeGreaterThan(sizes.item);
+  });
+});
 
-    const style = await badge.evaluate((el) => {
-      const s = getComputedStyle(el);
-      return {
-        display: s.display,
-        paddingX: parseFloat(s.paddingLeft),
-        radius: parseFloat(s.borderTopLeftRadius),
-      };
+test.describe('type', () => {
+  test('headings are set in the serif and body copy in Inter', async ({ page }) => {
+    await page.goto('/');
+    const fonts = await page.evaluate(() => ({
+      heading: getComputedStyle(document.querySelector('h1')!).fontFamily,
+      body: getComputedStyle(document.body).fontFamily,
+    }));
+    expect(fonts.heading).toMatch(/Instrument_Serif/i);
+    expect(fonts.body).toMatch(/Inter/i);
+  });
+});
+
+test.describe('colour', () => {
+  test('the accent clears WCAG AA on paper', async () => {
+    expect(contrastRatio(ACCENT, PAPER)).toBeGreaterThanOrEqual(4.5);
+  });
+
+  test('body copy clears WCAG AA against the page', async ({ page }) => {
+    await page.goto('/');
+
+    const samples = await page.evaluate(() => {
+      const parse = (s: string) => s.match(/[\d.]+/g)!.map(Number);
+      const selectors = ['.body-lead', '.body-copy', 'footer p', '.eyebrow'];
+      return selectors.map((selector) => {
+        const el = document.querySelector(selector)!;
+        let node: Element | null = el;
+        let layer = [255, 255, 255];
+        while (node) {
+          const raw = parse(getComputedStyle(node).backgroundColor);
+          const alpha = raw[3] === undefined ? 1 : raw[3];
+          if (alpha > 0) {
+            layer = [0, 1, 2].map((i) => raw[i] * alpha + 255 * (1 - alpha));
+            break;
+          }
+          node = node.parentElement;
+        }
+        return { selector, fg: parse(getComputedStyle(el).color).slice(0, 3), bg: layer };
+      });
     });
 
-    expect(style.display).toBe('inline-flex');
-    expect(style.paddingX).toBeGreaterThan(0);
-    expect(style.radius).toBeGreaterThan(50);
+    for (const sample of samples) {
+      expect(contrastRatio(sample.fg, sample.bg), `${sample.selector} contrast`).toBeGreaterThanOrEqual(4.5);
+    }
   });
 });
 
 test.describe('footer', () => {
-  test('body text meets WCAG AA contrast against its background', async ({ page }) => {
-    await page.goto('/');
-
-    const { fg, bg } = await page.evaluate(() => {
-      const p = document.querySelector('footer p')!;
-      const parse = (s: string) => s.match(/[\d.]+/g)!.map(Number);
-
-      // Walk up until a non-transparent background, compositing any alpha over white
-      let el: Element | null = p;
-      let layer = [255, 255, 255];
-      while (el) {
-        const raw = parse(getComputedStyle(el).backgroundColor);
-        const alpha = raw[3] === undefined ? 1 : raw[3];
-        if (alpha > 0) {
-          layer = [0, 1, 2].map((i) => raw[i] * alpha + 255 * (1 - alpha));
-          break;
-        }
-        el = el.parentElement;
-      }
-      return { fg: parse(getComputedStyle(p).color).slice(0, 3), bg: layer };
-    });
-
-    expect(contrastRatio(fg, bg)).toBeGreaterThanOrEqual(4.5);
-  });
-
   test('shows the browser current year, not the build year', async ({ page }) => {
     // Freeze the page clock well past any plausible build date. setTimeout is
     // left alone so React can still hydrate.
@@ -170,16 +290,72 @@ test.describe('footer', () => {
     });
 
     await page.goto('/');
-    await expect(page.locator('footer p')).toHaveText('© 2031 2ML LLC. All rights reserved.');
+    await expect(page.locator('footer p').first()).toHaveText('© 2031 2ML LLC · San Francisco');
   });
 
   test('static export ships a stale year that the client corrects', async ({ request }) => {
     const html = await (await request.get('/')).text();
-    const buildYear = html.match(/©\s*<!--[^>]*-->\s*(\d{4})|©\s*(\d{4})/);
 
     // The exported HTML is frozen at build time; the assertion above proves the
     // rendered page no longer depends on it
-    expect(html).toContain('2ML LLC. All rights reserved.');
-    expect(buildYear).not.toBeNull();
+    expect(html).toContain('2ML LLC');
+    expect(html).toMatch(/©\s*(<!--[^>]*-->\s*)?\d{4}/);
+  });
+
+  test('the contact address is reachable and on the right domain', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('footer').getByRole('link', { name: 'info@2ml.ai' })).toHaveAttribute(
+      'href',
+      'mailto:info@2ml.ai',
+    );
+  });
+});
+
+test.describe('metadata', () => {
+  const expected: Record<string, string> = {
+    '/': '2ML | The right thing, built well.',
+    '/work': 'Work | 2ML',
+    '/services': 'Services | 2ML',
+    '/about': 'About | 2ML',
+    '/contact': 'Contact | 2ML',
+  };
+
+  for (const [route, title] of Object.entries(expected)) {
+    test(`${route} carries its own title and description`, async ({ page }) => {
+      await page.goto(route);
+      await expect(page).toHaveTitle(title);
+      const description = await page
+        .locator('meta[name="description"]')
+        .getAttribute('content');
+      expect(description ?? '').not.toHaveLength(0);
+    });
+  }
+
+  test('the home page declares an Open Graph image that exists', async ({ page, request }) => {
+    await page.goto('/');
+    const image = await page.locator('meta[property="og:image"]').first().getAttribute('content');
+    expect(image).toContain('/images/og.png');
+
+    const response = await request.get('/images/og.png');
+    expect(response.status()).toBe(200);
+  });
+});
+
+test.describe('removed surfaces', () => {
+  test('the placeholder case-studies route is gone', async ({ request }) => {
+    const response = await request.get('/case-studies');
+    expect(response.status()).toBe(404);
+  });
+});
+
+test.describe('motion', () => {
+  test('transitions collapse when the visitor asks for less motion', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('/');
+    const duration = await page
+      .locator('.btn-solid')
+      .first()
+      .evaluate((el) => getComputedStyle(el).transitionDuration);
+    expect(parseFloat(duration)).toBeLessThan(0.05);
   });
 });

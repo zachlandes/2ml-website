@@ -1,187 +1,45 @@
-'use client';
+import type { Metadata } from 'next';
+import ContactForm from '@/components/ContactForm';
 
-import { useState } from 'react';
+export const metadata: Metadata = {
+  title: 'Contact',
+  description:
+    'Get in touch to discuss how we can help implement AI solutions for your business. A partner replies within one business day.',
+};
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: '',
-  });
-
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
-
-    try {
-      const response = await fetch('https://formspree.io/f/meoelkow', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      setStatus('success');
-      setFormData({ name: '', email: '', company: '', message: '' });
-    } catch (error) {
-      setStatus('error');
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
   return (
     <>
-      {/* Hero section */}
-      <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
-        <div className="container-width">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="heading-xl mb-6">Contact Us</h1>
-            <p className="text-body text-lg mb-0">
-              Get in touch to discuss how we can help implement AI solutions for your business.
-            </p>
-          </div>
-        </div>
+      <section className="container-editorial flex flex-col gap-4 pb-10 pt-14 lg:gap-5 lg:pb-16 lg:pt-24">
+        <h1 className="max-w-[800px] text-[40px] leading-[1.05] tracking-[-0.02em] lg:text-[56px]">
+          Tell us what you&rsquo;re trying to build.
+        </h1>
+        <p className="body-lead max-w-[720px]">A partner replies within one business day.</p>
       </section>
 
-      {/* Contact form section */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
-          <div className="max-w-xl mx-auto">
-            {status === 'success' ? (
-              <div className="rounded-md bg-green-50 p-4 mb-6">
-                <p className="text-green-800">
-                  Thank you for your message! We'll get back to you soon.
-                </p>
-              </div>
-            ) : null}
-
-            {status === 'error' ? (
-              <div className="rounded-md bg-red-50 p-4 mb-6">
-                <p className="text-red-800">
-                  Failed to send message. Please try again or email us directly.
-                </p>
-              </div>
-            ) : null}
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Name
-                </label>
-                <div className="mt-1">
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    required
-                    className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email
-                </label>
-                <div className="mt-1">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    required
-                    className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
-                    placeholder="you@company.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700">
-                  Company
-                </label>
-                <div className="mt-1">
-                  <input
-                    type="text"
-                    name="company"
-                    id="company"
-                    className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
-                    placeholder="Your company"
-                    value={formData.company}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Message
-                </label>
-                <div className="mt-1">
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    required
-                    className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
-                    placeholder="Tell us about your project"
-                    value={formData.message}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <button
-                  type="submit"
-                  disabled={status === 'loading'}
-                  className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {status === 'loading' ? 'Sending...' : 'Send Message'}
-                </button>
-              </div>
-            </form>
+      <section className="section-block">
+        <div className="container-editorial grid gap-10 lg:grid-cols-12 lg:gap-6">
+          <div className="lg:col-span-7">
+            <ContactForm />
           </div>
-        </div>
-      </section>
 
-      {/* Additional info section */}
-      <section className="section-padding bg-primary-50">
-        <div className="container-width">
-          <div className="max-w-3xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="card">
-                <h2 className="heading-md mb-4 text-primary-600">Office Location</h2>
-                <p className="text-body">
-                  San Francisco Bay Area, California<br />
-                  United States
-                </p>
-              </div>
-              <div className="card">
-                <h2 className="heading-md mb-4 text-primary-600">Contact Info</h2>
-                <p className="text-body">
-                  Email: info@2ml.com<br />
-                </p>
-              </div>
+          <div className="flex flex-col gap-8 border-t border-rule pt-8 lg:col-span-4 lg:col-start-9 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+            <div className="flex flex-col gap-2">
+              <h2 className="heading-item">Office Location</h2>
+              <p className="body-copy">
+                San Francisco Bay Area, California
+                <br />
+                United States
+              </p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h2 className="heading-item">Contact Info</h2>
+              <p className="body-copy">
+                Email:{' '}
+                <a href="mailto:info@2ml.ai" className="link-accent">
+                  info@2ml.ai
+                </a>
+              </p>
             </div>
           </div>
         </div>

@@ -8,6 +8,13 @@ Static marketing site.
 `next.config.js` sets `output: 'export'`, and Cloudflare Pages builds and serves the exported `out/` directory through its GitHub integration.
 There is no server and no request-time rendering: anything a server component computes is frozen into the HTML at build time.
 Values that must track the visitor (dates, locale, timezone) belong in a client component — see `src/components/CopyrightYear.tsx`.
+The contact form posts straight to Formspree from the browser, which is why the site needs no backend.
+
+## Design
+
+The site is the "Direction B" editorial design: warm paper, ink, one burnt-orange accent, Instrument Serif headings on Inter body.
+The palette and type live in `tailwind.config.ts`; the reference artboards are `design/Main.dc.html` (1440px) and `design/Phone.dc.html` (390px) in the redesign planning task, not in this repo.
+Public copy is captain-approved: reuse what is already on the site or in the artboards rather than writing new user-facing or assistive strings.
 
 ## Styling
 
@@ -18,11 +25,12 @@ Tailwind cannot warn about a class that is neither a utility nor defined there, 
 ## Tests
 
 `npm test` runs Playwright against the built static export, not `next dev` — the config builds and serves `out/` itself, so no server needs to be running first.
+The suite is the regression contract for layout overflow, shared styles, contrast, metadata and menu semantics; it is not a screenshot tool.
 
-## Known broken
+## Capturing screenshots
 
-`npm run lint` does not run: `eslint.config.mjs` extends `next/typescript`, which does not exist in `eslint-config-next@14.1.0`, and ESLint 8 does not read flat config by default.
-Repairing the config surfaces 17 pre-existing `react/no-unescaped-entities` errors in user-facing copy.
+Chrome's CLI clamps `--window-size` to 500px wide, so phone-width captures need real device-metrics emulation rather than a plain `--headless --screenshot` run.
+`chrome-devtools-axi` 0.1.26 prints an output path and writes no file on this machine; verify any capture tool actually produced a file before trusting it.
 
 ## Maintaining this file
 

@@ -1,17 +1,50 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
-import CopyrightYear from "@/components/CopyrightYear";
+import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+  display: "swap",
+});
+
+const description =
+  "We are two builders with product judgment, architecture and engineering in the same heads. We ship AI systems from prototype to production without a hand-off chain, because the people who understand your problem are the people who build it.";
 
 export const metadata: Metadata = {
-  title: "2ML | AI & Data Engineering Solutions",
-  description: "State-of-the-art AI solutions and data engineering for businesses. From RAG systems and chatbots to production data lakes and AI-powered applications.",
+  metadataBase: new URL("https://2ml.ai"),
+  title: {
+    default: "2ML | The right thing, built well.",
+    template: "%s | 2ML",
+  },
+  description,
   icons: {
-    icon: '/favicon.ico'
-  }
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "2ML",
+    title: "2ML | The right thing, built well.",
+    description,
+    url: "/",
+    images: [{ url: "/images/og.png", width: 1200, height: 630, alt: "2ML" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "2ML | The right thing, built well.",
+    description,
+    images: ["/images/og.png"],
+  },
 };
 
 export default function RootLayout({
@@ -20,19 +53,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} min-h-screen`}>
+    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
+      <body className="min-h-screen">
         <Navigation />
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-20">
-          {children}
-        </main>
-        <footer className="bg-slate-900 border-t border-slate-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <p className="text-center text-slate-400 text-sm">
-              © <CopyrightYear buildYear={new Date().getFullYear()} /> 2ML LLC. All rights reserved.
-            </p>
-          </div>
-        </footer>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

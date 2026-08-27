@@ -8,104 +8,82 @@
   }
 
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-paper text-ink font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight text-gray-900;
+    @apply font-serif font-normal text-ink tracking-[-0.01em];
   }
 
   p {
-    @apply text-gray-600;
+    @apply text-muted;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-paper;
   }
 }
 
 @layer components {
-  .container-width {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  /* Editorial grid: 1440px canvas, 64px gutters on desktop, 20px on phones */
+  .container-editorial {
+    @apply mx-auto w-full max-w-editorial px-5 sm:px-10 lg:px-16;
   }
 
-  .section-padding {
-    @apply py-12 sm:py-16 lg:py-20;
+  /* Every band below the hero is separated by a hairline rule, not a colour change */
+  .section-block {
+    @apply border-t border-rule py-12 lg:py-20;
   }
 
-  .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-primary 
-    rounded-md shadow-sm hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 
-    focus:ring-primary-500 transition-colors duration-200;
-  }
-  
-  .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-primary-600 
-    bg-primary-50 rounded-md hover:bg-primary-100 focus:outline-none focus:ring-2 
-    focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-200;
+  .eyebrow {
+    @apply text-[11px] lg:text-xs font-semibold uppercase tracking-[0.14em] text-accent;
   }
 
-  /* Base card styles */
-  .card-base {
-    @apply rounded-lg p-6 transition-shadow duration-200;
+  .btn-solid {
+    @apply inline-flex items-center justify-center rounded-full bg-ink px-[22px] py-3.5 text-base
+    font-medium text-paper transition-colors duration-200 hover:bg-ink-soft;
   }
 
-  /* Card on white background */
-  .card-on-white {
-    @apply card-base bg-gray-50 shadow-sm hover:shadow;
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-full border border-ink px-[18px] py-2.5
+    text-[15px] font-medium text-ink transition-colors duration-200 hover:bg-ink hover:text-paper;
   }
 
-  /* Card on gray background */
-  .card-on-gray {
-    @apply card-base bg-white shadow-[0_2px_8px_-3px_rgba(0,0,0,0.07),0_2px_4px_-3px_rgba(0,0,0,0.06)] 
-    hover:shadow-[0_4px_12px_-6px_rgba(0,0,0,0.08),0_4px_6px_-4px_rgba(0,0,0,0.07)];
+  .link-accent {
+    @apply font-medium text-accent underline underline-offset-[3px] transition-colors duration-200
+    hover:text-accent-dark;
   }
 
-  /* Default card: reads on white, gray-50 and primary-50 section backgrounds */
-  .card {
-    @apply card-base bg-white border border-gray-200 shadow-sm hover:shadow;
+  /* Ruled list item: the hairline above the heading is the only ornament */
+  .rule-item {
+    @apply flex flex-col gap-2 border-t border-ink pt-4;
   }
 
-  /* Stats card variants */
-  .stats-card-base {
-    @apply card-base flex flex-col items-center;
+  .heading-section {
+    @apply text-[34px] lg:text-[44px] leading-[1.08];
   }
 
-  .stats-card-on-white {
-    @apply stats-card-base bg-gray-50 shadow-sm;
+  .heading-item {
+    @apply text-[23px] lg:text-[26px] leading-[1.15];
   }
 
-  .stats-card-on-gray {
-    @apply stats-card-base bg-white shadow-[0_2px_8px_-3px_rgba(0,0,0,0.07),0_2px_4px_-3px_rgba(0,0,0,0.06)];
+  .body-lead {
+    @apply text-[17px] lg:text-[21px] leading-[1.55] text-muted;
   }
 
-  .badge {
-    @apply inline-flex items-center rounded-full px-3 py-1 text-sm font-medium;
+  .body-copy {
+    @apply text-[15px] lg:text-base leading-[1.65] text-muted;
   }
+}
 
-  .nav-link {
-    @apply inline-flex items-center px-1 py-3 text-sm font-medium text-gray-600 
-    transition-colors duration-200 border-b-2 border-transparent hover:text-primary-600 
-    hover:border-primary-500;
-  }
-
-  .nav-link-active {
-    @apply text-primary-600 border-primary-500;
-  }
-
-  .heading-xl {
-    @apply text-3xl font-bold sm:text-4xl lg:text-5xl;
-  }
-
-  .heading-lg {
-    @apply text-2xl font-bold sm:text-3xl lg:text-4xl;
-  }
-
-  .heading-md {
-    @apply text-xl font-bold sm:text-2xl lg:text-3xl;
-  }
-
-  .heading-sm {
-    @apply text-lg font-bold sm:text-xl lg:text-2xl;
-  }
-
-  .text-body {
-    @apply text-base text-gray-600 leading-relaxed;
+/* Honour the OS setting: nothing on this site needs motion to be understood */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
