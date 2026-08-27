@@ -40,8 +40,8 @@ The rewrite itself is a single pass in the owner's own voice, still to come.
 Each entry is named by the capability it proves, not the technology.
 That is what keeps two voice-AI stories from reading as "voice AI shop" and still lets a voice-AI prospect see the depth.
 
-Order: product partnership first, security-startup second, clinical tool last.
-Leading with the clinical tool was considered and rejected because it has no AI story.
+Order: voice product first, clinical entry second, three-day entry last.
+On a phone, the two voice stories must not stack back to back, while the clinical entry still does not lead.
 
 ### 1. Voice-AI build (startup) - proves product discovery
 

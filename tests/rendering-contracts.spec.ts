@@ -322,15 +322,20 @@ test.describe('settled content decisions', () => {
     await page.goto('/');
 
     const main = page.locator('main');
-    for (const heading of [
+    const hero = main.locator('> section').first();
+    await expect(hero.getByText('Three engagements', { exact: true })).toBeVisible();
+    await expect(hero.locator('dt')).toHaveText(['3 wks', '2,600+', '3 days']);
+
+    const engagementHeadings = main
+      .locator('> section')
+      .nth(1)
+      .getByRole('heading', { level: 2 })
+      .or(main.locator('> section').nth(1).getByRole('heading', { level: 3 }));
+    await expect(engagementHeadings).toHaveText([
       'A voice product, shaped and shipped alongside its founders',
-      'A working agent in three days, leading their engineers through the build',
       'A clinical assessment, rebuilt as software',
-    ]) {
-      await expect(main.getByRole('heading', { name: heading })).toBeVisible();
-    }
-    await expect(main.getByText('2,600+', { exact: true })).toBeVisible();
-    await expect(main.getByText('3 weeks to a speaking voice-AI prototype. 6 to an MVP.')).toBeVisible();
+      'A working agent in three days, leading their engineers through the build',
+    ]);
     await expect(main.getByText(/Two pilots followed, and they kept us on\. Nielsen/)).toBeVisible();
   });
 
@@ -339,12 +344,17 @@ test.describe('settled content decisions', () => {
 
     const rows = page.locator('main > section.section-block');
     await expect(rows).toHaveCount(3);
+    await expect(rows.locator('h2')).toHaveText([
+      'A voice product, shaped and shipped alongside its founders',
+      'A clinical assessment, rebuilt as software',
+      'A working agent in three days, leading their engineers through the build',
+    ]);
     await expect(rows.nth(0).getByText('3 wks', { exact: true })).toBeVisible();
-    await expect(rows.nth(1).getByText('3 days', { exact: true })).toBeVisible();
-    await expect(rows.nth(2).getByText('2,600+', { exact: true })).toBeVisible();
-    await expect(rows.nth(1)).toContainText('foundation on day one, alone');
-    await expect(rows.nth(1)).toContainText('preliminary commitment');
-    await expect(rows.nth(2)).toContainText('FERPA-grade data');
+    await expect(rows.nth(1).getByText('2,600+', { exact: true })).toBeVisible();
+    await expect(rows.nth(2).getByText('3 days', { exact: true })).toBeVisible();
+    await expect(rows.nth(1)).toContainText('FERPA-grade data');
+    await expect(rows.nth(2)).toContainText('foundation on day one, alone');
+    await expect(rows.nth(2)).toContainText('preliminary commitment');
 
     const publicCopy = await page.locator('main').innerText();
     expect(publicCopy).not.toMatch(/4,000|HIPAA|\$\d/);
