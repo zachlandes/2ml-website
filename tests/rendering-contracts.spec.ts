@@ -362,10 +362,8 @@ test.describe('metadata', () => {
         'content',
         metadata.description,
       );
-      await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
-        'content',
-        `https://2ml.ai${route}`,
-      );
+      const openGraphUrl = await page.locator('meta[property="og:url"]').getAttribute('content');
+      expect(new URL(openGraphUrl!).href).toBe(new URL(route, 'https://2ml.ai').href);
       await expect(page.locator('meta[property="og:image"]').first()).toHaveAttribute(
         'content',
         'https://2ml.ai/images/og.png',
@@ -388,6 +386,35 @@ test.describe('metadata', () => {
   test('the Open Graph image exists', async ({ request }) => {
     const response = await request.get('/images/og.png');
     expect(response.status()).toBe(200);
+  });
+});
+
+test.describe('contact form', () => {
+  test('submits to Formspree and confirms success', async ({ page }) => {
+    let submitted: Record<string, string> | undefined;
+    await page.route('https://formspree.io/f/meoelkow', async (route) => {
+      submitted = route.request().postDataJSON();
+      await route.fulfill({ status: 200, contentType: 'application/json', body: '{}' });
+    });
+
+    await page.goto('/contact');
+    await page.getByLabel('Name').fill('Taylor Example');
+    await page.getByLabel('Email').fill('taylor@example.com');
+    await page.getByLabel('Company').fill('Example Co');
+    await page.getByLabel('Message').fill('Help us build an agentic system.');
+    await page.getByRole('button', { name: 'Send Message' }).click();
+
+    await expect(page.getByText("Thank you for your message! We'll get back to you soon.")).toBeVisible();
+    expect(submitted).toEqual({
+      name: 'Taylor Example',
+      email: 'taylor@example.com',
+      company: 'Example Co',
+      message: 'Help us build an agentic system.',
+    });
+    await expect(page.getByLabel('Name')).toHaveValue('');
+    await expect(page.getByLabel('Email')).toHaveValue('');
+    await expect(page.getByLabel('Company')).toHaveValue('');
+    await expect(page.getByLabel('Message')).toHaveValue('');
   });
 });
 

@@ -14,7 +14,7 @@ The contact form posts straight to Formspree from the browser, which is why the 
 
 The site is the "Direction B" editorial design: warm paper, ink, one burnt-orange accent, Instrument Serif headings on Inter body.
 The palette and type live in `tailwind.config.ts`; the reference artboards are `design/Main.dc.html` (1440px) and `design/Phone.dc.html` (390px) in the redesign planning task, not in this repo.
-Public copy is captain-approved: reuse what is already on the site or in the artboards rather than writing new user-facing or assistive strings.
+The redesign's public copy is provisional pending one comprehensive captain pass; do not treat its presence as approval for reuse.
 
 ## Styling
 

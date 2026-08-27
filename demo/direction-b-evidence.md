@@ -148,9 +148,9 @@ grep -rn 'OpenTable' src/ | cut -c1-150
 ```
 
 ```output
-src/app/about/page.tsx:19:      'He began his career as the first employee at Trumpet (later Ness), an early AI-powered restaurant recommendation app 
+src/app/about/page.tsx:19:      'He began his career as the first employee at Trumpet (later Ness), an early AI-powered restaurant recommendation app
 src/components/sections/Hero.tsx:31:          Nielsen. Walmart. First hire at a startup OpenTable acquired. Two patents in patient data
-src/components/sections/WhoDoesTheWork.tsx:7:    bio: 'Engineer, product manager, former economist. First employee at Trumpet, acquired by OpenTable; 
+src/components/sections/WhoDoesTheWork.tsx:7:    bio: 'Engineer, product manager, former economist. First employee at Trumpet, acquired by OpenTable;
 ```
 
 ## Metadata and the Open Graph card
@@ -218,10 +218,6 @@ out/services.html
 out/work.html
 1
 ```
-
-## One string still needs approval
-
-The mobile menu toggle is an icon button, so it needs an accessible name and there is no existing visible label to borrow. It currently ships `aria-label="Menu"`. That is the only user-facing or assistive string in this change that is neither existing site copy nor approved artboard copy.
 
 ## The 404
 
