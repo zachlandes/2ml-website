@@ -64,7 +64,7 @@ Leading with the clinical tool was considered and rejected because it has no AI 
   The structure is a colon, not commas: three days, then what the three days were.
 - Claim boundary (settled 2026-08-27): the Friday pitch **led to a preliminary commitment from the exchange**. That is the claim, exactly.
   Not "sold"; not the $1.1M figure; and no stated link between that meeting and the $1.1M the CEO mentioned three weeks later, because the owner does not know how the two are related.
-  "Exchange" and "preliminary commitment" are the facts in shorthand, not wording: "exchange" is jargon outside crypto and "preliminary commitment" is deal-room language. The owner writes the plain version.
+  Say "a major crypto exchange" in full: "a major exchange" on its own is unclear. "Preliminary commitment" is the fact in shorthand, not settled wording.
 - Two distinct positives here; keep them apart. **During:** he led their engineers through the build, coordinating the team with the CTO from day one. **After:** they took it from there.
   This entry is named for expertise and leadership, so the heading carries the during-the-build claim; the handoff is a sentence in the body, not the headline.
 - By Friday they pitched it to a major crypto exchange.
