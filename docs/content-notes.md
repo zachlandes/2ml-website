@@ -125,6 +125,14 @@ Permissions can be pursued later and the entries upgraded then.
   Either locate the original vector/layered source, or knock the white out of the PNG (dark line art, keys cleanly with edge cleanup).
 - The same 438KB file loads on every page for a 36px icon; produce an optimised copy regardless.
 
+## Future: writing
+
+The owner may publish essays (Substack) and later republish or link to them from the site.
+Nothing is built now; no affordance until there is a first piece.
+When it comes, three paths, all compatible with the static export and none needing a CMS:
+link out (a nav item or a line on About); republish (a `/writing` route rendered from Markdown at export time); or a build-time list of Substack posts read from its RSS feed during `next build`.
+The editorial design already has the title, date and measured text column an essay page needs, and the nav has room for one more item.
+
 ## Open items
 
 - [ ] Exact count of children assessed.
