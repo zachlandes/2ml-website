@@ -328,6 +328,56 @@ test.describe('footer', () => {
 });
 
 test.describe('settled content decisions', () => {
+  test('About presents the provisional AI position before its closing invitation', async ({ page }) => {
+    await page.goto('/about');
+
+    const main = page.locator('main');
+    const position = main
+      .getByRole('heading', { name: 'Where we stand' })
+      .locator('..')
+      .locator('..');
+    await expect(position).toContainText(
+      'AI should leave the people who meet it better off. That is the whole test, and it rules some work out.',
+    );
+    await expect(position).toContainText(
+      'We won’t build AI that replaces a medical intervention unless there is a safety process with expert review behind it; we turned down a psychology voice-AI project because we could not be the ones deciding whether it was safe.',
+    );
+    await expect(position).toContainText(
+      'When no human is in the loop, the person on the other end is told up front that they are talking to AI.',
+    );
+    await expect(position).toContainText(
+      'we blinded the assessment so the score could not depend on how someone talks.',
+    );
+    await expect(position).toContainText(
+      'And we are not interested in AI that is anti-consumer. It should improve the experience, not run a race to the bottom.',
+    );
+
+    const peopleY = await main
+      .getByRole('heading', { name: 'Who does the work' })
+      .evaluate((node) => node.getBoundingClientRect().y);
+    const positionY = await position.evaluate((node) => node.getBoundingClientRect().y);
+    const closingY = await main
+      .getByRole('heading', { name: 'Tell us what you’re trying to build.' })
+      .evaluate((node) => node.getBoundingClientRect().y);
+    expect(positionY).toBeGreaterThan(peopleY);
+    expect(positionY).toBeLessThan(closingY);
+  });
+
+  test('the blinded live-evaluations highlight appears on Home and Work', async ({ page }) => {
+    const detail =
+      'Every conversation scored, blind to how a person talks, so the pilots produced evidence.';
+
+    await page.goto('/');
+    const homeEngagement = page.locator('main > section').nth(1);
+    await expect(homeEngagement.getByText('Live evaluations', { exact: true })).toBeVisible();
+    await expect(homeEngagement).toContainText(detail);
+
+    await page.goto('/work');
+    const workEngagement = page.locator('main > section.section-block').first();
+    await expect(workEngagement.getByText('Live evaluations', { exact: true })).toBeVisible();
+    await expect(workEngagement).toContainText(detail);
+  });
+
   test('Home presents three distinct engagements and leads its proof with speed', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/');
