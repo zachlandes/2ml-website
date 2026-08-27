@@ -92,6 +92,13 @@ Leading with the clinical tool was considered and rejected because it has no AI 
 - The other three services are things we have been paid to do and stand as they are.
 - The insurance-agents tool is **not named on the site yet**; revisit as it develops, since it is the obvious future evidence for the agents entry.
 
+## Contact page
+
+- "San Francisco Bay Area, California" is wrong: the company is in San Francisco itself.
+  Carried forward from the old site; live in production today.
+  The footer already says "San Francisco" correctly, so the contact block should match it.
+- Otherwise the page is the approved headline and reply promise plus the existing Formspree form.
+
 ## About page
 
 - Fine as is apart from the "nobody else between you and the code" line (see positioning).
