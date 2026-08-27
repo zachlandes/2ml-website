@@ -39,7 +39,8 @@ The rewrite itself is a single pass in the owner's own voice, still to come.
   (1) Disclose when a person is talking to AI, up front, whenever a human is not in the loop, i.e. for fully autonomous conversational AI or communication.
   (2) No AI that replaces a medical intervention without a safety process that includes expert review. The event behind it: he turned down consulting on a psychology-type voice-AI project because he was not comfortable implementing something with such significant health implications where he could not be the person deciding whether it was safe.
   (3) No AI that is anti-consumer. AI should improve the customer experience, not be a race to the bottom.
-  (4) The right thing includes whether it should be built at all.
+  (4) Mitigate the pre-trained bias of AI against minority groups and women.
+  (5) The right thing includes whether it should be built at all.
   Register: a rule, then the thing actually done. Keep spoken phrases like "race to the bottom"; they are the anti-tell.
 
 ## Work page: three entries, co-equal
