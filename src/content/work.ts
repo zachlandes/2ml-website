@@ -32,15 +32,6 @@ export const engagements: Engagement[] = [
     stat: { figure: '3 wks', label: 'to a speaking prototype' },
   },
   {
-    slug: 'three-days',
-    capability: 'Expertise and leadership',
-    problem: 'Six weeks, six engineers, no working agent.',
-    title: 'A working agent in three days, leading their engineers through the build',
-    summary:
-      "A security startup's CTO and six engineers had spent six weeks without a working conversational agent. We built one from scratch in three days: the foundation on day one, alone; then, with the CTO, split the rest into pieces, matched each to one of their engineers, and got every piece built and integrated in time for Friday's demo. They pitched it to a major crypto exchange that day and came away with a preliminary commitment.",
-    stat: { figure: '3 days', label: 'to a working agent' },
-  },
-  {
     slug: 'clinical-assessment',
     capability: 'Learning the domain',
     problem: 'A paper process, no technology team, thousands of children.',
@@ -50,6 +41,15 @@ export const engagements: Engagement[] = [
     // Active child records on the platform, each a paid seat for the customer;
     // measured 2026-08-27 and approved by the owner. Revisit rather than round up.
     stat: { figure: '2,600+', label: 'children on the platform' },
+  },
+  {
+    slug: 'three-days',
+    capability: 'Expertise and leadership',
+    problem: 'Six weeks, six engineers, no working agent.',
+    title: 'A working agent in three days, leading their engineers through the build',
+    summary:
+      "A security startup's CTO and six engineers had spent six weeks without a working conversational agent. We built one from scratch in three days: the foundation on day one, alone; then, with the CTO, split the rest into pieces, matched each to one of their engineers, and got every piece built and integrated in time for Friday's demo. They pitched it to a major crypto exchange that day and came away with a preliminary commitment.",
+    stat: { figure: '3 days', label: 'to a working agent' },
   },
 ];
 

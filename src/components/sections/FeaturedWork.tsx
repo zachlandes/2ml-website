@@ -37,9 +37,6 @@ export default function FeaturedWork() {
         <div className="flex flex-col gap-3 lg:col-span-4">
           <p className="eyebrow">Also</p>
           <p className="body-copy max-w-[360px]">Two more engagements, each a different kind of problem.</p>
-          <Link href="/work" className="link-accent whitespace-nowrap text-base">
-            Read all three →
-          </Link>
         </div>
         <div className="grid gap-8 sm:grid-cols-2 sm:gap-10 lg:col-span-8">
           {alsoFeatured.map((entry) => (
@@ -57,6 +54,12 @@ export default function FeaturedWork() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="container-editorial">
+        <Link href="/work" className="link-accent whitespace-nowrap text-base">
+          Read all three →
+        </Link>
       </div>
     </section>
   );

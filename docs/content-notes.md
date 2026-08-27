@@ -112,6 +112,12 @@ Permissions can be pursued later and the entries upgraded then.
 - Voice check: if a phrase sounds like a headline rather than something the owner would say to a client on a call, it is an AI tell ("a team that could carry it").
   The plain version is almost always a concrete event (their own engineers took it from there; they pitched it that Friday; they kept us on) rather than a quality (could carry it, built well, shaped and shipped).
 
+### Phone review (2026-08-27)
+
+- On a phone the hero proof column, the featured entry and the three-day entry stacked into three voice-AI items in a row, and the hero column repeated the featured engagement under the same "Featured work" label.
+  Fix: the hero column is now a strip of all three engagements' numbers (3 wks, 2,600+, 3 days), so the first proof a reader sees is breadth; and the clinical entry sits between the two voice stories on Home and Work, so voice never appears twice in a row while still not leading.
+- "Read all three" sat between entry one and entries two and three on a phone, pointing at content directly below it. It now follows all three.
+
 ### Layout consequences
 
 - The former right-column paragraph under "Voice AI, from open question to production" read as a footnote to the voice-AI entry.

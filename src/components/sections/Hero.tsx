@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { engagements } from '@/content/work';
 
 export default function Hero() {
   return (
@@ -22,14 +23,23 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col gap-3 border-t border-rule pt-6 lg:col-span-4 lg:mt-0 lg:gap-[18px] lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
-        <p className="eyebrow">Featured work</p>
-        <p className="font-serif text-[26px] leading-[1.15] text-ink lg:text-[30px]">
-          3 weeks to a speaking voice-AI prototype. 6 to an MVP.
-        </p>
+      <div className="mt-10 flex flex-col gap-5 border-t border-rule pt-6 lg:col-span-4 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
+        <p className="eyebrow">Three engagements</p>
+        <dl className="flex flex-col gap-3.5">
+          {engagements
+            .filter((entry) => entry.stat)
+            .map((entry) => (
+              <div key={entry.slug} className="flex items-baseline gap-3">
+                <dt className="w-[5.5rem] shrink-0 font-serif text-[26px] leading-none text-ink lg:text-[28px]">
+                  {entry.stat!.figure}
+                </dt>
+                <dd className="text-sm leading-[1.4] text-muted">{entry.stat!.label}</dd>
+              </div>
+            ))}
+        </dl>
         <p className="text-sm leading-[1.6] text-muted-faint">
-          Two pilots followed, and they kept us on. Nielsen. Walmart. First hire at a startup OpenTable
-          acquired. Two patents in patient data protection.
+          Nielsen. Walmart. First hire at a startup OpenTable acquired. Two patents in patient data
+          protection.
         </p>
       </div>
     </section>
