@@ -89,6 +89,10 @@ Leading with the clinical tool was considered and rejected because it has no AI 
 - Do not imply cheap. "Small team, tight budget" reads as price; the flex is a small senior team absorbing that much complexity.
 - Minnesota is signed but not onboarded: **stays off the site.**
 - Ruling 2026-08-27: because the customer stays anonymous, aggregate Help Connect numbers may be considered, but **no number is chosen or published until the counts and definitions are delivered and the owner decides directly** what can and cannot appear.
+- Measured production aggregates were delivered 2026-08-27 (read-only, definitions and caveats held privately). **The owner's working figure of "over 4,000" is not supported by production**: every defensible count is lower. No figure is recorded here until one is approved for publication.
+- Regime: **FERPA plus Head Start confidentiality. Do not claim HIPAA**; any broader compliance claim needs counsel. The site's current "FERPA-grade" wording is on the right side of this.
+- Non-identifying description of the tool, usable in copy: the HELP 0-3 assessment, birth through about age three, across seven developmental domains.
+- Do not reuse the stale README claims of "5,000+ teachers" or "685 skills" anywhere.
 - Logo: not for now (see anonymity decision below).
 - On Services this same engagement proves a different sentence: we design the foundation so AI can come later.
 
@@ -154,7 +158,7 @@ The editorial design already has the title, date and measured text column an ess
 
 ## Open items
 
-- [ ] Exact count of children assessed.
+- [ ] Which measured figure (if any) to publish, and its label; owner decides.
 - [ ] Logo/naming permission: deferred past this release (voice-AI startup; clinical client).
 - [ ] Ethics passage (owner writes).
 - [x] Mark placement and transparent derived assets; provenance and regeneration details live in [AGENTS.md](../AGENTS.md#design).
