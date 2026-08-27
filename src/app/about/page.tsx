@@ -32,6 +32,32 @@ const partners = [
   },
 ];
 
+const positions = [
+  {
+    rule: 'We will not sell you what you do not need',
+    detail:
+      'We won’t sell you AI when there’s a better solution to your problem, and we won’t sell you our services when we aren’t the right partners to accomplish your goals.',
+  },
+  {
+    rule: 'No AI in place of a medical intervention without expert review',
+    detail:
+      'We turned down a psychology voice-AI project because we could not be the ones deciding whether it was safe.',
+  },
+  {
+    rule: 'People are told when they are talking to AI',
+    detail: 'Up front, whenever no human is in the loop.',
+  },
+  {
+    rule: 'The bias in the training data is our problem',
+    detail:
+      'In a product used mostly by minority users, where the AI assessed people on their conversations, we blinded the assessment so the score could not depend on how someone talks.',
+  },
+  {
+    rule: 'No race to the bottom',
+    detail: 'We are not interested in AI that is anti-consumer. It should improve the experience.',
+  },
+];
+
 export default function About() {
   return (
     <>
@@ -93,23 +119,21 @@ export default function About() {
 
       {/* Provisional: assembled from the owner's stated positions as a starting point for his own pass */}
       <section className="section-block">
-        <div className="container-editorial grid gap-6 lg:grid-cols-12">
-          <div className="lg:col-span-4">
+        <div className="container-editorial grid gap-8 lg:grid-cols-12 lg:gap-6">
+          <div className="flex flex-col gap-3 lg:col-span-4">
             <h2 className="heading-section">Where we stand</h2>
-          </div>
-          <div className="lg:col-span-7">
-            <p className="max-w-[720px] text-base leading-[1.65] text-ink-soft lg:text-[19px]">
+            <p className="body-copy max-w-[360px]">
               AI should leave the people who meet it better off. That is the whole test, and it rules
-              some work out. We won&rsquo;t build AI that replaces a medical intervention unless there
-              is a safety process with expert review behind it; we turned down a psychology voice-AI
-              project because we could not be the ones deciding whether it was safe. When no human is
-              in the loop, the person on the other end is told up front that they are talking to AI.
-              Models arrive with the biases of their training data, and we treat that as our problem:
-              in a product used mostly by minority users, where the AI assessed people on their
-              conversations, we blinded the assessment so the score could not depend on how someone
-              talks. And we are not interested in AI that is anti-consumer. It should improve the
-              experience, not run a race to the bottom.
+              some work out.
             </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-8 lg:col-span-8">
+            {positions.map((position) => (
+              <div key={position.rule} className="rule-item">
+                <h3 className="heading-item">{position.rule}</h3>
+                <p className="body-copy">{position.detail}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

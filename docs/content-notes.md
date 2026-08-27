@@ -32,6 +32,7 @@ The rewrite itself is a single pass in the owner's own voice, still to come.
   Ethics passage: still deferred, still to be written first-person as a way of working, not a badge.
   Currently absent on purpose rather than faked.
   The provisional "Where we stand" draft is now on About; the owner will rewrite it.
+  Form (2026-08-27): not a paragraph. One sentence of prose states the test, then the positions as ruled items (the site's existing rule-item device), each a rule with its example beneath. The owner's own line leads: "We won't sell you AI when there's a better solution to your problem, and we won't sell you our services when we aren't the right partners to accomplish your goals."
   Proposal (2026-08-27): one paragraph of roughly 100-150 words under its own heading at the bottom of About, below the bios and above the closing CTA.
   Concept: make the ethical reading of "the right thing" explicit; the right thing includes whether it should be built at all.
   Three beats, each concrete rather than declared: work we turn down; how we treat the people on the other end of the data (children's clinical records, patient data); honesty with clients about what AI can and cannot do, including telling them when they do not need it.
