@@ -43,10 +43,12 @@ That is what keeps two voice-AI stories from reading as "voice AI shop" and stil
 Order: product partnership first, security-startup second, clinical tool last.
 Leading with the clinical tool was considered and rejected because it has no AI story.
 
-### 1. Voice-AI build (startup) - proves product partnership
+### 1. Voice-AI build (startup) - proves product discovery
 
 - The work was helping them decide what the product should be: the interactions, what the system captures, what it should grow into.
   Iterative, over months; longer but not long.
+- Name it by its recognised name: **product discovery**, and specifically continuous discovery, alongside strategy, architecture and engineering.
+  Startups know the term; it says "not a vendor building to a spec" in two words and shows we speak their vocabulary.
 - Speed facts already on the site are real and stay: 3 weeks to a speaking prototype, 6 to an MVP.
 - Relationship proof: they kept us on (replaces "two further contracts").
 - New fact to add: Zach did the technical interviewing for their CTO hire and advised on it.
@@ -57,6 +59,8 @@ Leading with the clinical tool was considered and rejected because it has no AI 
 
 - Their CTO and six engineers had spent six weeks without a working conversational agent.
 - Zach built one from scratch in three days (started Tuesday night), laid the foundation in a day, then worked with the CTO to delegate the rest to their team.
+- Two distinct positives here; keep them apart. **During:** he led their engineers through the build, coordinating the team with the CTO from day one. **After:** they took it from there.
+  This entry is named for expertise and leadership, so the heading carries the during-the-build claim; the handoff is a sentence in the body, not the headline.
 - By Friday they pitched it to a major crypto exchange.
   **Do not name the exchange.**
 - **Do not state the $1.1M ARR figure.** It was relayed by their CEO and extrapolated from monthly; not first-hand.
@@ -71,12 +75,14 @@ Leading with the clinical tool was considered and rejected because it has no AI 
 - No AI features in year one; designed AI-capable from the start.
   State what it is confidently and let AI-readiness be texture, not the point.
 - Its job on the page is to prove the "built well" half of the tagline: production, at scale, in a sensitive field.
-- Stat to surface: children assessed.
-  Owner knows it is over 4,000 as of Aug 2026; **get the exact figure before it goes on a page.**
+- Stat to surface: children on the platform, and say what that means: each child is a paid seat for the customer.
+  That turns "the tool gets used" into "we built a per-child SaaS product that is running commercially at this scale", which is the claim a product or engineering leader cares about.
+  Owner knows it is over 4,000 as of Aug 2026; **get the exact figure before it goes on a page** (asked of firstmate; the platform count is the one to quote, labelled as such).
   Present it as a big serif number with a label, matching the weight of the voice-AI figures.
 - Duration (11 months) is not the lead; it reads as slow, not hard.
 - Do not imply cheap. "Small team, tight budget" reads as price; the flex is a small senior team absorbing that much complexity.
 - Minnesota is signed but not onboarded: **stays off the site.**
+- Ruling 2026-08-27: because the customer stays anonymous, aggregate Help Connect numbers may be considered, but **no number is chosen or published until the counts and definitions are delivered and the owner decides directly** what can and cannot appear.
 - Logo: not for now (see anonymity decision below).
 - On Services this same engagement proves a different sentence: we design the foundation so AI can come later.
 
@@ -85,6 +91,16 @@ Leading with the clinical tool was considered and rejected because it has no AI 
 Every entry stays fully anonymous for this release so the site can go out without waiting on logo or naming permission.
 No client names, no logos, no logo slots in the layout.
 Permissions can be pursued later and the entries upgraded then.
+
+### Headline rules (from the Option C review, 2026-08-27)
+
+- Headings name the client's problem, not the technology; the body names the technology.
+  A scan of the page should say "they solve problems like mine", not "they build voice AI".
+- A problem-only headline reads as our failure ("Six weeks, six engineers, still no working agent").
+  Chosen device (C2): a short muted problem line above, then a heading that states what the client has now.
+- Every heading must stand alone on a scan: no pronouns whose antecedent is in another line ("shaped and shipped with them").
+- Voice check: if a phrase sounds like a headline rather than something the owner would say to a client on a call, it is an AI tell ("a team that could carry it").
+  The plain version is almost always a concrete event (their own engineers took it from there; they pitched it that Friday; they kept us on) rather than a quality (could carry it, built well, shaped and shipped).
 
 ### Layout consequences
 
