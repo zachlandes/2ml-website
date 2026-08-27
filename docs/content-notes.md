@@ -104,10 +104,20 @@ Leading with the clinical tool was considered and rejected because it has no AI 
 - Fine as is apart from the "nobody else between you and the code" line (see positioning).
 - Bios are already in a real voice; if rewritten it is for length and emphasis, not authenticity.
 
+## Brand mark
+
+- The llama mark appears only at 30-36px in the header, so nowhere on the site does a visitor actually see it.
+  Give it one place at size; recommendation is the top of About, left-aligned on the grid, roughly 120-200px.
+  This is not a return of the removed hero logo, which was a 160px logo doing the hero's job.
+- `public/images/2ml_logo.png` ships on an opaque white ground, hidden in the header with `mix-blend-multiply`.
+  Get a transparent-background version before it goes large; the blend trick shows at the edges at that size.
+- The same 438KB file loads on every page for a 36px icon; produce an optimised copy regardless.
+
 ## Open items
 
 - [ ] Exact count of children assessed.
 - [ ] What "two pilots" actually were.
 - [ ] Logo/anonymity permission: voice-AI startup; clinical client.
 - [ ] Ethics passage (owner writes).
+- [ ] Transparent-background and optimised versions of the mark.
 - [ ] Voice AI: lean in as a specialty or keep it one capability among several? Deferred; the capability-named framing above works either way.
