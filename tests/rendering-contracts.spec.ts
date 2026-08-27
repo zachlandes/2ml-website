@@ -339,18 +339,20 @@ test.describe('settled content decisions', () => {
     await expect(position).toContainText(
       'AI should leave the people who meet it better off. That is the whole test, and it rules some work out.',
     );
-    await expect(position).toContainText(
-      'We won’t build AI that replaces a medical intervention unless there is a safety process with expert review behind it; we turned down a psychology voice-AI project because we could not be the ones deciding whether it was safe.',
-    );
-    await expect(position).toContainText(
-      'When no human is in the loop, the person on the other end is told up front that they are talking to AI.',
-    );
-    await expect(position).toContainText(
-      'we blinded the assessment so the score could not depend on how someone talks.',
-    );
-    await expect(position).toContainText(
-      'And we are not interested in AI that is anti-consumer. It should improve the experience, not run a race to the bottom.',
-    );
+    await expect(position.locator('.rule-item h3')).toHaveText([
+      'We will not sell you what you do not need',
+      'No AI in place of a medical intervention without expert review',
+      'People are told when they are talking to AI',
+      'The bias in the training data is our problem',
+      'No race to the bottom',
+    ]);
+    await expect(position.locator('.rule-item p')).toHaveText([
+      'We won’t sell you AI when there’s a better solution to your problem, and we won’t sell you our services when we aren’t the right partners to accomplish your goals.',
+      'We turned down a psychology voice-AI project because we could not be the ones deciding whether it was safe.',
+      'Up front, whenever no human is in the loop.',
+      'In a product used mostly by minority users, where the AI assessed people on their conversations, we blinded the assessment so the score could not depend on how someone talks.',
+      'We are not interested in AI that is anti-consumer. It should improve the experience.',
+    ]);
 
     const peopleY = await main
       .getByRole('heading', { name: 'Who does the work' })
