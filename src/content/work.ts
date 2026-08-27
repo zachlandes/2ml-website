@@ -38,7 +38,7 @@ export const engagements: Engagement[] = [
     title: 'A clinical assessment, rebuilt as software',
     summary:
       'An organisation with no in-house technology function. We learned the clinical domain and turned a paper developmental assessment for young children into a digital tool, handling FERPA-grade data, with the foundation laid so AI features can follow. It is in production today, and its customers pay per child on it.',
-    // Active child records on the platform, each a paid seat for the customer;
+    // Active child records on the platform, whose customers pay per child;
     // measured 2026-08-27 and approved by the owner. Revisit rather than round up.
     stat: { figure: '2,600+', label: 'children on the platform' },
   },

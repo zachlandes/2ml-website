@@ -60,7 +60,7 @@ On a phone, the two voice stories must not stack back to back, while the clinica
 - Their CTO and six engineers had spent six weeks without a working conversational agent.
 - The whole build took three days (started Tuesday night); the sentence must not present "three days", "foundation in one" and "handed the rest to the team" as three parallel events, because the second and third are what the three days consisted of.
   Day one: after learning what they wanted, Zach built the foundation himself, essentially solo apart from meetings.
-  Days two and three: still building as an IC, and now leading: he split the remaining work into pieces, the CTO told him which engineer fit each, he met each engineer and got them clear on what to build so it integrated into the whole in time for Friday's demo.
+  Days two and three: still building as an IC, and now leading: he split the remaining work into pieces, the CTO told him which engineer fit each, he met each engineer and got them clear on what to build so it integrated into a working application by Friday.
   The structure is a colon, not commas: three days, then what the three days were.
 - Technical substance, for the Work page (2026-08-27): the three days produced a realtime voice-AI pipeline built from scratch, with telephony wired in so the agent could be on the other end of a real phone call, and a working application by Friday, not a demo. "Demo" undersells it and is retired.
   The pipeline also did voice cloning. **Kept off the site for now**: with "security startup" and "crypto exchange" already stated, cloning narrows the description enough to risk identifying the client. Owner may decide otherwise for the Work page.

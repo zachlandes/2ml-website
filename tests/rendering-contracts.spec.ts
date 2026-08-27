@@ -360,6 +360,9 @@ test.describe('settled content decisions', () => {
       'A working agent in three days, leading their engineers through the build',
     ]);
     await expect(main.getByText(/Two pilots followed, and they kept us on\./)).toBeVisible();
+    await expect(main).not.toContainText('Realtime voice');
+    await expect(main).not.toContainText('On the phone');
+    await expect(main).not.toContainText('Their team, from day two');
 
     const lastEngagement = main.getByRole('heading', {
       name: 'A working agent in three days, leading their engineers through the build',
@@ -395,11 +398,22 @@ test.describe('settled content decisions', () => {
     await expect(rows.nth(1).getByText('2,600+', { exact: true })).toBeVisible();
     await expect(rows.nth(2).getByText('3 days', { exact: true })).toBeVisible();
     await expect(rows.nth(1)).toContainText('FERPA-grade data');
+    await expect(rows.nth(1)).toContainText('It is in production today, and its customers pay per child on it.');
+    await expect(rows.nth(1).locator('dd')).toHaveText('children on the platform');
     await expect(rows.nth(2)).toContainText('foundation on day one, alone');
+    await expect(rows.nth(2)).toContainText('had a working application by Friday');
     await expect(rows.nth(2)).toContainText('preliminary commitment');
+    await expect(rows.nth(2).getByText('Realtime voice', { exact: true })).toBeVisible();
+    await expect(rows.nth(2)).toContainText('A voice-AI pipeline built from scratch, not assembled from a demo.');
+    await expect(rows.nth(2).getByText('On the phone', { exact: true })).toBeVisible();
+    await expect(rows.nth(2)).toContainText('Telephony wired in, so the agent could take a real call.');
+    await expect(rows.nth(2).getByText('Their team, from day two', { exact: true })).toBeVisible();
+    await expect(rows.nth(2)).toContainText(
+      'The work split across their engineers and integrated by Friday.',
+    );
 
     const publicCopy = await page.locator('main').innerText();
-    expect(publicCopy).not.toMatch(/4,000|HIPAA|\$\d/);
+    expect(publicCopy).not.toMatch(/4,000|HIPAA|voice clon|\$\d/i);
   });
 
   test('Services and Contact show the approved removals and location', async ({ page }) => {
