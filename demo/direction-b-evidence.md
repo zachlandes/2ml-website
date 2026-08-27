@@ -5,6 +5,7 @@
 
 The captain approved Direction B, an editorial studio look: warm paper, ink, one restrained burnt-orange accent, Instrument Serif headings on Inter body, built against the 1440px and 390px reference artboards.
 
+This evidence captures the initial redesign before the later content-review notes and transparent brand-mark follow-up.
 Every screenshot below is a real Chrome render of the static export that Cloudflare Pages serves — `out/`, built by `next build` — at a real viewport size, not a dev server and not a mock.
 
 ## The home page
@@ -55,7 +56,9 @@ At 390px the same page keeps the artboard's order and its inset rule above the p
 
 ## Services, About, Contact
 
-Services drops the generic four-step process and leads with the four things we actually build, with "For small teams" named as its own path. About drops Mission / Approach / Values and keeps the real founder biographies. Contact keeps the Formspree form and now shows the right address.
+Services drops the generic four-step process and leads with the four things we actually build, with "For small teams" named as its own path.
+About drops Mission / Approach / Values and keeps the real founder biographies.
+Contact keeps the Formspree form; its location correction is deferred to the copy rewrite recorded in [`docs/content-notes.md`](../docs/content-notes.md#contact-page).
 
 ```bash {image}
 ![Services at 1440px: what we build, with the small-teams path named](direction-b-services-1440.png)

@@ -117,13 +117,10 @@ Permissions can be pursued later and the entries upgraded then.
 
 ## Brand mark
 
-- The llama mark appears only at 30-36px in the header, so nowhere on the site does a visitor actually see it.
-  Give it one place at size; recommendation is the top of About, left-aligned on the grid, roughly 120-200px.
-  This is not a return of the removed hero logo, which was a 160px logo doing the hero's job.
-- `public/images/2ml_logo.png` ships on an opaque white ground, hidden in the header with `mix-blend-multiply`.
-  Checked 2026-08-27: no transparent version exists in the repo, its history, or the design folder; the file is RGBA but alpha is 255 throughout.
-  Either locate the original vector/layered source, or knock the white out of the PNG (dark line art, keys cleanly with edge cleanup).
-- The same 438KB file loads on every page for a 36px icon; produce an optimised copy regardless.
+- The placement decision is complete: About opens on the mark, left-aligned on the grid at 160px on large screens, while the header keeps the small mark.
+  This is not a return of the removed 160px hero logo, which made the logo do the hero's job.
+- The opaque white-ground logo and its `mix-blend-multiply` workaround are gone.
+  See [AGENTS.md](../AGENTS.md#design) for the current asset and regeneration contract.
 
 ## Future: writing
 
@@ -138,5 +135,5 @@ The editorial design already has the title, date and measured text column an ess
 - [ ] Exact count of children assessed.
 - [ ] Logo/naming permission: deferred past this release (voice-AI startup; clinical client).
 - [ ] Ethics passage (owner writes).
-- [x] Mark: 2048px transparent Canva export obtained 2026-08-27; derived copies committed, placed on About and in the header.
+- [x] Mark placement and transparent derived assets; provenance and regeneration details live in [AGENTS.md](../AGENTS.md#design).
 - [ ] Voice AI: lean in as a specialty or keep it one capability among several? Deferred; the capability-named framing above works either way.

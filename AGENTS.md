@@ -15,7 +15,7 @@ The contact form posts straight to Formspree from the browser, which is why the 
 The site is the "Direction B" editorial design: warm paper, ink, one burnt-orange accent, Instrument Serif headings on Inter body.
 The palette and type live in `tailwind.config.ts`; the reference artboards are `design/Main.dc.html` (1440px) and `design/Phone.dc.html` (390px) in the redesign planning task, not in this repo.
 The redesign's public copy is provisional pending one comprehensive captain pass; do not treat its presence as approval for reuse.
-The brand mark ships only as derived copies (`public/images/2ml_mark.png` at 480px for About, `2ml_mark-96.png` for the header), cut from a 2048px transparent Canva export that lives outside the repo; regenerate from that export rather than upscaling these.
+The brand mark ships only as a 480px About derivative (`public/images/2ml_mark.png`) and a 96px header derivative (`public/images/2ml_mark-96.png`), cut from a 2048px transparent Canva export that lives outside the repo; regenerate from that export rather than upscaling these.
 
 ## Styling
 
