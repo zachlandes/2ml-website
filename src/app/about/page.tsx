@@ -36,6 +36,15 @@ export default function About() {
   return (
     <>
       <section className="container-editorial flex flex-col gap-4 pb-10 pt-14 lg:gap-5 lg:pb-16 lg:pt-24">
+        {/* The only place the mark appears at a size where it can be seen */}
+        <Image
+          src="/images/2ml_mark.png"
+          alt=""
+          width={480}
+          height={480}
+          priority
+          className="mb-4 h-28 w-28 lg:mb-6 lg:h-40 lg:w-40"
+        />
         <h1 className="text-[40px] leading-[1.05] tracking-[-0.02em] lg:text-[60px]">About 2ML</h1>
         <p className="body-lead max-w-[720px]">
           We are a California-based AI and data engineering consulting firm dedicated to implementing

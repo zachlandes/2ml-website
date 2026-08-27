@@ -39,12 +39,11 @@ const Navigation = () => {
       <div className="container-editorial flex h-[60px] items-center justify-between lg:h-[72px]">
         <Link href="/" className="flex shrink-0 items-center gap-2 lg:gap-2.5">
           <Image
-            src="/images/2ml_logo.png"
+            src="/images/2ml_mark-96.png"
             alt="2ML"
             width={36}
             height={36}
-            // The logo ships on an opaque white ground; multiply drops it into the paper
-            className="h-[30px] w-[30px] object-contain mix-blend-multiply lg:h-9 lg:w-9"
+            className="h-[30px] w-[30px] object-contain lg:h-9 lg:w-9"
             priority
           />
           <span className="font-serif text-[22px] leading-none lg:text-2xl">2ML</span>

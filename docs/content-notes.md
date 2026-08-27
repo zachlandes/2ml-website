@@ -138,5 +138,5 @@ The editorial design already has the title, date and measured text column an ess
 - [ ] Exact count of children assessed.
 - [ ] Logo/naming permission: deferred past this release (voice-AI startup; clinical client).
 - [ ] Ethics passage (owner writes).
-- [ ] Original source file for the mark, or a knocked-out PNG; plus an optimised header copy.
+- [x] Mark: 2048px transparent Canva export obtained 2026-08-27; derived copies committed, placed on About and in the header.
 - [ ] Voice AI: lean in as a specialty or keep it one capability among several? Deferred; the capability-named framing above works either way.
