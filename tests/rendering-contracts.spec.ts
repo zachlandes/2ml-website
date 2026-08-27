@@ -336,6 +336,18 @@ test.describe('settled content decisions', () => {
     const hero = main.locator('> section').first();
     await expect(hero.getByText('Three engagements', { exact: true })).toBeVisible();
     await expect(hero.locator('dt')).toHaveText(['3 wks', '2,600+', '3 days']);
+    await expect(hero).not.toContainText('Nielsen');
+    await expect(hero).not.toContainText('Walmart');
+    await expect(hero).not.toContainText('OpenTable');
+    await expect(hero).not.toContainText('patents');
+
+    const people = main.getByRole('heading', { name: 'Who does the work' }).locator('..').locator('..');
+    await expect(people.getByRole('heading', { name: 'Zach Landes' }).locator('..')).toContainText(
+      'First employee at Trumpet, acquired by OpenTable; product leader at Walmart.com; helped architect a $100M ARR metadata platform at Nielsen.',
+    );
+    await expect(people.getByRole('heading', { name: 'Kevin Juszczyk' }).locator('..')).toContainText(
+      "two patents in patient data protection; staff engineer on Nielsen's global metadata platform on AWS.",
+    );
 
     const engagementHeadings = main
       .locator('> section')
@@ -358,6 +370,15 @@ test.describe('settled content decisions', () => {
     expect(lastEngagementBox).not.toBeNull();
     expect(allWorkLinkBox).not.toBeNull();
     expect(allWorkLinkBox!.y).toBeGreaterThan(lastEngagementBox!.y + lastEngagementBox!.height);
+
+    await page.goto('/about');
+    const zachBio = page.getByRole('heading', { name: 'Zach Landes' }).locator('..');
+    await expect(zachBio).toContainText('acquired by OpenTable');
+    await expect(zachBio).toContainText('product leader on analytics at Walmart.com');
+    await expect(zachBio).toContainText('Nielsen');
+    const kevinBio = page.getByRole('heading', { name: 'Kevin Juszczyk' }).locator('..');
+    await expect(kevinBio).toContainText('two patents related to protecting patient personally identifiable information');
+    await expect(kevinBio).toContainText('Nielsen');
   });
 
   test('Work renders the three engagements as equal rows with the settled facts', async ({ page }) => {

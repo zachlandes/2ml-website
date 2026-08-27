@@ -144,7 +144,9 @@ git diff --stat --diff-filter=D f4c75dd -- src public | cat
 
 ## The OpenTable fact
 
-Trumpet was acquired by OpenTable; Zach did not work at OpenTable. The old `ServicesOverview` claimed we had "delivered AI & data solutions for industry leaders like OpenTable, Walmart, and Nielsen" — that component is gone, and every surviving mention frames OpenTable as the acquirer.
+Trumpet was acquired by OpenTable; Zach did not work at OpenTable.
+The old `ServicesOverview` claimed we had "delivered AI & data solutions for industry leaders like OpenTable, Walmart, and Nielsen" — that component is gone, and every surviving mention frames OpenTable as the acquirer.
+A later owner review also removed the biographical line from the hero; [`docs/content-notes.md`](../docs/content-notes.md#phone-review-2026-08-27) owns that decision.
 
 ```bash
 grep -rn 'OpenTable' src/ | cut -c1-150
@@ -152,7 +154,6 @@ grep -rn 'OpenTable' src/ | cut -c1-150
 
 ```output
 src/app/about/page.tsx:19:      'He began his career as the first employee at Trumpet (later Ness), an early AI-powered restaurant recommendation app
-src/components/sections/Hero.tsx:31:          Nielsen. Walmart. First hire at a startup OpenTable acquired. Two patents in patient data
 src/components/sections/WhoDoesTheWork.tsx:7:    bio: 'Engineer, product manager, former economist. First employee at Trumpet, acquired by OpenTable;
 ```
 
