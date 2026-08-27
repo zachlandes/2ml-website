@@ -62,6 +62,9 @@ On a phone, the two voice stories must not stack back to back, while the clinica
   Day one: after learning what they wanted, Zach built the foundation himself, essentially solo apart from meetings.
   Days two and three: still building as an IC, and now leading: he split the remaining work into pieces, the CTO told him which engineer fit each, he met each engineer and got them clear on what to build so it integrated into the whole in time for Friday's demo.
   The structure is a colon, not commas: three days, then what the three days were.
+- Technical substance, for the Work page (2026-08-27): the three days produced a realtime voice-AI pipeline built from scratch, with telephony wired in so the agent could be on the other end of a real phone call, and a working application by Friday, not a demo. "Demo" undersells it and is retired.
+  The pipeline also did voice cloning. **Kept off the site for now**: with "security startup" and "crypto exchange" already stated, cloning narrows the description enough to risk identifying the client. Owner may decide otherwise for the Work page.
+  Home keeps the summary technology-light under the headline rule; the substance lives in the Work entry's highlights.
 - Claim boundary (settled 2026-08-27): the Friday pitch **led to a preliminary commitment from the exchange**. That is the claim, exactly.
   Not "sold"; not the $1.1M figure; and no stated link between that meeting and the $1.1M the CEO mentioned three weeks later, because the owner does not know how the two are related.
   Say "a major crypto exchange" in full: "a major exchange" on its own is unclear. "Preliminary commitment" is the fact in shorthand, not settled wording.
@@ -81,7 +84,8 @@ On a phone, the two voice stories must not stack back to back, while the clinica
 - No AI features in year one; designed AI-capable from the start.
   State what it is confidently and let AI-readiness be texture, not the point.
 - Its job on the page is to prove the "built well" half of the tagline: production, at scale, in a sensitive field.
-- Stat to surface: children on the platform, and say what that means: each child is a paid seat for the customer.
+- Stat to surface: children on the platform, and say what that means: the organisations using the tool pay per child.
+  Keep "paid seats" out of the label; a count of children stays a count of people. The commercial fact goes in the body sentence in plain words ("its customers pay per child on it"), which is what turns shipped software into a per-child SaaS business, running.
   That turns "the tool gets used" into "we built a per-child SaaS product that is running commercially at this scale", which is the claim a product or engineering leader cares about.
   Owner knows it is over 4,000 as of Aug 2026; **get the exact figure before it goes on a page** (asked of firstmate; the platform count is the one to quote, labelled as such).
   Present it as a big serif number with a label, matching the weight of the voice-AI figures.

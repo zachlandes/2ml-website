@@ -37,7 +37,7 @@ export const engagements: Engagement[] = [
     problem: 'A paper process, no technology team, thousands of children.',
     title: 'A clinical assessment, rebuilt as software',
     summary:
-      'An organisation with no in-house technology function. We learned the clinical domain and turned a paper developmental assessment for young children into a digital tool, handling FERPA-grade data, with the foundation laid so AI features can follow. It is in production today.',
+      'An organisation with no in-house technology function. We learned the clinical domain and turned a paper developmental assessment for young children into a digital tool, handling FERPA-grade data, with the foundation laid so AI features can follow. It is in production today, and its customers pay per child on it.',
     // Active child records on the platform, each a paid seat for the customer;
     // measured 2026-08-27 and approved by the owner. Revisit rather than round up.
     stat: { figure: '2,600+', label: 'children on the platform' },
@@ -48,7 +48,12 @@ export const engagements: Engagement[] = [
     problem: 'Six weeks, six engineers, no working agent.',
     title: 'A working agent in three days, leading their engineers through the build',
     summary:
-      "A security startup's CTO and six engineers had spent six weeks without a working conversational agent. We built one from scratch in three days: the foundation on day one, alone; then, with the CTO, split the rest into pieces, matched each to one of their engineers, and got every piece built and integrated in time for Friday's demo. They pitched it to a major crypto exchange that day and came away with a preliminary commitment.",
+      "A security startup's CTO and six engineers had spent six weeks without a working conversational agent. We built one from scratch in three days: the foundation on day one, alone; then, with the CTO, split the rest into pieces, matched each to one of their engineers, and had a working application by Friday. They pitched it to a major crypto exchange that day and came away with a preliminary commitment.",
+    highlights: [
+      { title: 'Realtime voice', detail: 'A voice-AI pipeline built from scratch, not assembled from a demo.' },
+      { title: 'On the phone', detail: 'Telephony wired in, so the agent could take a real call.' },
+      { title: 'Their team, from day two', detail: 'The work split across their engineers and integrated by Friday.' },
+    ],
     stat: { figure: '3 days', label: 'to a working agent' },
   },
 ];
