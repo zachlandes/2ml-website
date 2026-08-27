@@ -34,6 +34,13 @@ The rewrite itself is a single pass in the owner's own voice, still to come.
   Concept: make the ethical reading of "the right thing" explicit; the right thing includes whether it should be built at all.
   Three beats, each concrete rather than declared: work we turn down; how we treat the people on the other end of the data (children's clinical records, patient data); honesty with clients about what AI can and cannot do, including telling them when they do not need it.
   Avoid "ethical AI", "responsible AI" and any badge vocabulary; the anonymised, un-inflated case studies are themselves the evidence.
+  Correction 2026-08-27: the subject IS ethics in AI, specifically, and the heading should say so; "how we work" was a guard against the badge presentation, not the topic.
+  The owner's positions, in his words, as source material for the passage:
+  (1) Disclose when a person is talking to AI, up front, whenever a human is not in the loop, i.e. for fully autonomous conversational AI or communication.
+  (2) No AI that replaces a medical intervention without a safety process that includes expert review. The event behind it: he turned down consulting on a psychology-type voice-AI project because he was not comfortable implementing something with such significant health implications where he could not be the person deciding whether it was safe.
+  (3) No AI that is anti-consumer. AI should improve the customer experience, not be a race to the bottom.
+  (4) The right thing includes whether it should be built at all.
+  Register: a rule, then the thing actually done. Keep spoken phrases like "race to the bottom"; they are the anti-tell.
 
 ## Work page: three entries, co-equal
 
