@@ -28,13 +28,16 @@ The rewrite itself is a single pass in the owner's own voice, still to come.
 - "The two of us. Nobody else is between you and the code." (home and About) claims too much.
   The defensible claim is about judgment, not hands: when a customer is working out what to build and how, they are working directly with the two partners.
   Say nothing about subcontractors either way.
-- Ethics passage: still deferred, still to be written first-person as a way of working, not a badge.
+- Superseded status:
+  Ethics passage: still deferred, still to be written first-person as a way of working, not a badge.
   Currently absent on purpose rather than faked.
+  The provisional "Where we stand" draft is now on About; the owner will rewrite it.
   Proposal (2026-08-27): one paragraph of roughly 100-150 words under its own heading at the bottom of About, below the bios and above the closing CTA.
   Concept: make the ethical reading of "the right thing" explicit; the right thing includes whether it should be built at all.
   Three beats, each concrete rather than declared: work we turn down; how we treat the people on the other end of the data (children's clinical records, patient data); honesty with clients about what AI can and cannot do, including telling them when they do not need it.
   Avoid "ethical AI", "responsible AI" and any badge vocabulary; the anonymised, un-inflated case studies are themselves the evidence.
   Correction 2026-08-27: the subject IS ethics in AI, specifically, and the heading should say so; "how we work" was a guard against the badge presentation, not the topic.
+  The provisional heading "Where we stand" deliberately avoids both "mission" and "ethics"; whether the final heading names ethics remains an open choice for the owner.
   The owner's positions, in his words, as source material for the passage:
   (1) Disclose when a person is talking to AI, up front, whenever a human is not in the loop, i.e. for fully autonomous conversational AI or communication.
   (2) No AI that replaces a medical intervention without a safety process that includes expert review. The event behind it: he turned down consulting on a psychology-type voice-AI project because he was not comfortable implementing something with such significant health implications where he could not be the person deciding whether it was safe.
