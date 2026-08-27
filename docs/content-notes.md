@@ -58,7 +58,11 @@ Leading with the clinical tool was considered and rejected because it has no AI 
 ### 2. Security-space voice-AI startup - proves expertise and leadership
 
 - Their CTO and six engineers had spent six weeks without a working conversational agent.
-- Zach built one from scratch in three days (started Tuesday night), laid the foundation in a day, then worked with the CTO to delegate the rest to their team.
+- The whole build took three days (started Tuesday night); the sentence must not present "three days", "foundation in one" and "handed the rest to the team" as three parallel events, because the second and third are what the three days consisted of.
+  Day one: after learning what they wanted, Zach built the foundation himself, essentially solo apart from meetings.
+  Days two and three: still building as an IC, and now leading: he split the remaining work into pieces, the CTO told him which engineer fit each, he met each engineer and got them clear on what to build so it integrated into the whole in time for Friday's demo.
+  The structure is a colon, not commas: three days, then what the three days were.
+- Claim strength: "they pitched it that Friday" is the safe claim; "sold it" is a claim about their outcome and stays out unless the owner confirms he stands behind it.
 - Two distinct positives here; keep them apart. **During:** he led their engineers through the build, coordinating the team with the CTO from day one. **After:** they took it from there.
   This entry is named for expertise and leadership, so the heading carries the during-the-build claim; the handoff is a sentence in the body, not the headline.
 - By Friday they pitched it to a major crypto exchange.
