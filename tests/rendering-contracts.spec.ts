@@ -319,6 +319,7 @@ test.describe('footer', () => {
 
 test.describe('settled content decisions', () => {
   test('Home presents three distinct engagements and leads its proof with speed', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/');
 
     const main = page.locator('main');
@@ -336,7 +337,17 @@ test.describe('settled content decisions', () => {
       'A clinical assessment, rebuilt as software',
       'A working agent in three days, leading their engineers through the build',
     ]);
-    await expect(main.getByText(/Two pilots followed, and they kept us on\. Nielsen/)).toBeVisible();
+    await expect(main.getByText(/Two pilots followed, and they kept us on\./)).toBeVisible();
+
+    const lastEngagement = main.getByRole('heading', {
+      name: 'A working agent in three days, leading their engineers through the build',
+    });
+    const allWorkLink = main.getByRole('link', { name: 'Read all three →' });
+    const lastEngagementBox = await lastEngagement.boundingBox();
+    const allWorkLinkBox = await allWorkLink.boundingBox();
+    expect(lastEngagementBox).not.toBeNull();
+    expect(allWorkLinkBox).not.toBeNull();
+    expect(allWorkLinkBox!.y).toBeGreaterThan(lastEngagementBox!.y + lastEngagementBox!.height);
   });
 
   test('Work renders the three engagements as equal rows with the settled facts', async ({ page }) => {
