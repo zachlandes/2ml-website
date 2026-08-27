@@ -195,7 +195,7 @@ test.describe('shared component styles are defined', () => {
 
   test('the heading and body scales are ordered', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
-    await page.goto('/services');
+    await page.goto('/contact');
 
     const sizes = await page.evaluate(() => {
       const size = (sel: string) =>
@@ -327,12 +327,12 @@ test.describe('metadata', () => {
     '/work': {
       title: 'Work | 2ML',
       description:
-        'A large enterprise needed to know whether realtime voice AI could work for them before committing budget. In three weeks they had a speaking prototype with live evaluations; in six, an MVP on scalable cloud infrastructure.',
+        'Three engagements, three different problems: a voice product shaped alongside its founders, a working agent in three days, and a clinical assessment rebuilt as software.',
     },
     '/services': {
       title: 'Services | 2ML',
       description:
-        'We offer comprehensive AI and data engineering solutions to help businesses leverage the power of artificial intelligence.',
+        'Agents that work inside your systems, AI inside your product, a plan and a team that can execute it, and a fractional AI lead for small teams.',
     },
     '/about': {
       title: 'About | 2ML',

@@ -4,7 +4,7 @@ import { createPageMetadata } from '@/lib/metadata';
 
 export const metadata = createPageMetadata(
   'Services',
-  'We offer comprehensive AI and data engineering solutions to help businesses leverage the power of artificial intelligence.',
+  'Agents that work inside your systems, AI inside your product, a plan and a team that can execute it, and a fractional AI lead for small teams.',
   '/services',
 );
 
@@ -13,10 +13,6 @@ export default function Services() {
     <>
       <section className="container-editorial flex flex-col gap-4 pb-10 pt-14 lg:gap-5 lg:pb-16 lg:pt-24">
         <h1 className="text-[40px] leading-[1.05] tracking-[-0.02em] lg:text-[60px]">What we build</h1>
-        <p className="body-lead max-w-[720px]">
-          We offer comprehensive AI and data engineering solutions to help businesses leverage the
-          power of artificial intelligence.
-        </p>
       </section>
 
       <section className="section-block">

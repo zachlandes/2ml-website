@@ -23,13 +23,13 @@ export default function Hero() {
       </div>
 
       <div className="mt-10 flex flex-col gap-3 border-t border-rule pt-6 lg:col-span-4 lg:mt-0 lg:gap-[18px] lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
-        <p className="eyebrow">In practice</p>
+        <p className="eyebrow">Featured work</p>
         <p className="font-serif text-[26px] leading-[1.15] text-ink lg:text-[30px]">
-          3 weeks to a speaking voice-AI prototype. 6 to an MVP. Two pilots, then two more contracts.
+          3 weeks to a speaking voice-AI prototype. 6 to an MVP.
         </p>
         <p className="text-sm leading-[1.6] text-muted-faint">
-          Nielsen. Walmart. First hire at a startup OpenTable acquired. Two patents in patient data
-          protection.
+          Two pilots followed, and they kept us on. Nielsen. Walmart. First hire at a startup OpenTable
+          acquired. Two patents in patient data protection.
         </p>
       </div>
     </section>

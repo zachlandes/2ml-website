@@ -27,7 +27,7 @@ export default function Contact() {
             <div className="flex flex-col gap-2">
               <h2 className="heading-item">Office Location</h2>
               <p className="body-copy">
-                San Francisco Bay Area, California
+                San Francisco, California
                 <br />
                 United States
               </p>

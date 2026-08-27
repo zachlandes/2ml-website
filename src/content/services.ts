@@ -16,7 +16,6 @@ export const services: Service[] = [
     details: [
       'Workflow automation for common business processes',
       'Automated task handling and response management',
-      '24/7 customer support with automated request routing',
       'Smart document understanding and organization',
     ],
   },

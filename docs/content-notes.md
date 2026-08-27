@@ -158,7 +158,7 @@ The editorial design already has the title, date and measured text column an ess
 
 ## Open items
 
-- [ ] Which measured figure (if any) to publish, and its label; owner decides.
+- [x] Figure approved 2026-08-27: **2,600+ children on the platform** (active child records excluding internal test organisations, measured that day). Chosen over the larger lifetime total because it needs no qualifier and only goes up. Revisit from a fresh measurement rather than rounding up.
 - [ ] Logo/naming permission: deferred past this release (voice-AI startup; clinical client).
 - [ ] Ethics passage (owner writes).
 - [x] Mark placement and transparent derived assets; provenance and regeneration details live in [AGENTS.md](../AGENTS.md#design).

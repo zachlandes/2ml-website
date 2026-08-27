@@ -19,7 +19,7 @@ export default function WhoDoesTheWork() {
       <div className="container-editorial grid gap-6 lg:grid-cols-12">
         <div className="flex flex-col gap-2 lg:col-span-4 lg:gap-3">
           <h2 className="heading-section">Who does the work</h2>
-          <p className="body-copy">The two of us. Nobody else is between you and the code.</p>
+          <p className="body-copy">The two of us. When you are working out what to build and how, you are working with us directly.</p>
         </div>
         <div className="grid gap-7 sm:grid-cols-2 sm:gap-10 lg:col-span-8">
           {partners.map((partner) => (
