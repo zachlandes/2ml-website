@@ -12,7 +12,8 @@ The rewrite itself is a single pass in the owner's own voice, still to come.
 - "Two pilots, then two further contracts" is ambiguous: a reader can take it as business the client won with the product rather than engagements they gave us.
   The second reading is the more impressive one, so a reader who picks it feels misled.
   Do not use the word "contracts"; say what the relationship was (they kept us on).
-  Check what "two pilots" actually were before reusing that word.
+  "Two pilots" is accurate and stays: the client ran them with partner organisations, who gave staff (one pilot) or their own clients (the other) access to the prototype; dozens of real users ran voice-AI conversations, and the sessions fed product improvement and validated that it solved a problem.
+  Do not quote the user count; "real users" is the claim, and dozens is a small number in print.
 - Trumpet was acquired by OpenTable; Zach never worked at OpenTable.
   Already fixed on the branch; keep it that way.
 
@@ -29,6 +30,10 @@ The rewrite itself is a single pass in the owner's own voice, still to come.
   Say nothing about subcontractors either way.
 - Ethics passage: still deferred, still to be written first-person as a way of working, not a badge.
   Currently absent on purpose rather than faked.
+  Proposal (2026-08-27): one paragraph of roughly 100-150 words under its own heading at the bottom of About, below the bios and above the closing CTA.
+  Concept: make the ethical reading of "the right thing" explicit; the right thing includes whether it should be built at all.
+  Three beats, each concrete rather than declared: work we turn down; how we treat the people on the other end of the data (children's clinical records, patient data); honesty with clients about what AI can and cannot do, including telling them when they do not need it.
+  Avoid "ethical AI", "responsible AI" and any badge vocabulary; the anonymised, un-inflated case studies are themselves the evidence.
 
 ## Work page: three entries, co-equal
 
@@ -46,7 +51,7 @@ Leading with the clinical tool was considered and rejected because it has no AI 
 - Relationship proof: they kept us on (replaces "two further contracts").
 - New fact to add: Zach did the technical interviewing for their CTO hire and advised on it.
   Keep it factual and small; it is the strongest trust signal in the set.
-- Logo: possible, permission not yet asked.
+- Logo: not for now (see anonymity decision below).
 
 ### 2. Security-space voice-AI startup - proves expertise and leadership
 
@@ -72,14 +77,20 @@ Leading with the clinical tool was considered and rejected because it has no AI 
 - Duration (11 months) is not the lead; it reads as slow, not hard.
 - Do not imply cheap. "Small team, tight budget" reads as price; the flex is a small senior team absorbing that much complexity.
 - Minnesota is signed but not onboarded: **stays off the site.**
-- Logo: possible; raising it with the client also raises the anonymity question, so ask both together.
+- Logo: not for now (see anonymity decision below).
 - On Services this same engagement proves a different sentence: we design the foundation so AI can come later.
+
+### Anonymity decision (2026-08-27)
+
+Every entry stays fully anonymous for this release so the site can go out without waiting on logo or naming permission.
+No client names, no logos, no logo slots in the layout.
+Permissions can be pursued later and the entries upgraded then.
 
 ### Layout consequences
 
 - The current right-column paragraph under "Voice AI, from open question to production" reads as a footnote to the voice-AI entry.
   Give each entry its own heading and body of equal weight.
-- Design for a logo strip that only ever has one or two logos: the logo is an optional element inside an entry, never a shared row the third entry is missing from.
+- No logo elements in this release; if logos come later, they go inside an entry as an optional element, never in a shared strip a third entry is missing from.
 - Home features one entry (the voice-AI build, for the product/engineering-leader audience); the other two live on Work.
 
 ## Services page
@@ -110,14 +121,14 @@ Leading with the clinical tool was considered and rejected because it has no AI 
   Give it one place at size; recommendation is the top of About, left-aligned on the grid, roughly 120-200px.
   This is not a return of the removed hero logo, which was a 160px logo doing the hero's job.
 - `public/images/2ml_logo.png` ships on an opaque white ground, hidden in the header with `mix-blend-multiply`.
-  Get a transparent-background version before it goes large; the blend trick shows at the edges at that size.
+  Checked 2026-08-27: no transparent version exists in the repo, its history, or the design folder; the file is RGBA but alpha is 255 throughout.
+  Either locate the original vector/layered source, or knock the white out of the PNG (dark line art, keys cleanly with edge cleanup).
 - The same 438KB file loads on every page for a 36px icon; produce an optimised copy regardless.
 
 ## Open items
 
 - [ ] Exact count of children assessed.
-- [ ] What "two pilots" actually were.
-- [ ] Logo/anonymity permission: voice-AI startup; clinical client.
+- [ ] Logo/naming permission: deferred past this release (voice-AI startup; clinical client).
 - [ ] Ethics passage (owner writes).
-- [ ] Transparent-background and optimised versions of the mark.
+- [ ] Original source file for the mark, or a knocked-out PNG; plus an optimised header copy.
 - [ ] Voice AI: lean in as a specialty or keep it one capability among several? Deferred; the capability-named framing above works either way.
