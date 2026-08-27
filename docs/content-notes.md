@@ -42,6 +42,8 @@ The rewrite itself is a single pass in the owner's own voice, still to come.
   (4) Mitigate the pre-trained bias of AI against minority groups and women.
   (5) The right thing includes whether it should be built at all.
   Register: a rule, then the thing actually done. Keep spoken phrases like "race to the bottom"; they are the anti-tell.
+  Open framing choice (2026-08-27): ethics passage, or a mission statement that heavily touches ethics.
+  Recommended: one passage, mission-shaped opening (what AI should do for people; "improve the customer experience, not a race to the bottom" is already that sentence), then the positions as the concrete edges. It should read as the tagline unpacked, not a second tagline; keep at least one line that cost something (the turned-down project) so the aspiration is believed. Avoid a heading that says "mission"; the old site's Mission card was removed for being generic.
 
 ## Work page: three entries, co-equal
 
