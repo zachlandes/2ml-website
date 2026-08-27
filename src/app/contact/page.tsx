@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
+import { createPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Contact',
-  description:
-    'Get in touch to discuss how we can help implement AI solutions for your business. A partner replies within one business day.',
-};
+export const metadata = createPageMetadata(
+  'Contact',
+  'Get in touch to discuss how we can help implement AI solutions for your business. A partner replies within one business day.',
+  '/contact',
+);
 
 export default function Contact() {
   return (

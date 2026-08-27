@@ -65,7 +65,13 @@ test.describe('navigation', () => {
 
     await toggle.click();
     await expect(toggle).toHaveAttribute('aria-expanded', 'true');
-    await expect(page.locator('#mobile-nav').getByRole('link', { name: 'Work' })).toBeVisible();
+    const panel = page.locator('#mobile-nav');
+    await expect(panel.getByRole('link', { name: 'Work' })).toBeVisible();
+    await expect(panel.getByRole('link', { name: 'Talk to a partner' })).toHaveAttribute(
+      'href',
+      '/contact',
+    );
+    await expect(panel.getByRole('link', { name: 'Contact', exact: true })).toBeHidden();
 
     const { scrollWidth, clientWidth } = await documentWidths(page);
     expect(scrollWidth).toBeLessThanOrEqual(clientWidth);
@@ -312,30 +318,74 @@ test.describe('footer', () => {
 });
 
 test.describe('metadata', () => {
-  const expected: Record<string, string> = {
-    '/': '2ML | The right thing, built well.',
-    '/work': 'Work | 2ML',
-    '/services': 'Services | 2ML',
-    '/about': 'About | 2ML',
-    '/contact': 'Contact | 2ML',
+  const expected = {
+    '/': {
+      title: '2ML | The right thing, built well.',
+      description:
+        'We are two builders with product judgment, architecture and engineering in the same heads. We ship AI systems from prototype to production without a hand-off chain, because the people who understand your problem are the people who build it.',
+    },
+    '/work': {
+      title: 'Work | 2ML',
+      description:
+        'A large enterprise needed to know whether realtime voice AI could work for them before committing budget. In three weeks they had a speaking prototype with live evaluations; in six, an MVP on scalable cloud infrastructure.',
+    },
+    '/services': {
+      title: 'Services | 2ML',
+      description:
+        'We offer comprehensive AI and data engineering solutions to help businesses leverage the power of artificial intelligence.',
+    },
+    '/about': {
+      title: 'About | 2ML',
+      description:
+        'We are a California-based AI and data engineering consulting firm dedicated to implementing state-of-the-art AI solutions for businesses.',
+    },
+    '/contact': {
+      title: 'Contact | 2ML',
+      description:
+        'Get in touch to discuss how we can help implement AI solutions for your business. A partner replies within one business day.',
+    },
   };
 
-  for (const [route, title] of Object.entries(expected)) {
-    test(`${route} carries its own title and description`, async ({ page }) => {
+  for (const [route, metadata] of Object.entries(expected)) {
+    test(`${route} carries accurate page and social metadata`, async ({ page }) => {
       await page.goto(route);
-      await expect(page).toHaveTitle(title);
-      const description = await page
-        .locator('meta[name="description"]')
-        .getAttribute('content');
-      expect(description ?? '').not.toHaveLength(0);
+      await expect(page).toHaveTitle(metadata.title);
+      await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+        'content',
+        metadata.description,
+      );
+      await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
+        'content',
+        metadata.title,
+      );
+      await expect(page.locator('meta[property="og:description"]')).toHaveAttribute(
+        'content',
+        metadata.description,
+      );
+      await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
+        'content',
+        `https://2ml.ai${route}`,
+      );
+      await expect(page.locator('meta[property="og:image"]').first()).toHaveAttribute(
+        'content',
+        'https://2ml.ai/images/og.png',
+      );
+      await expect(page.locator('meta[name="twitter:title"]')).toHaveAttribute(
+        'content',
+        metadata.title,
+      );
+      await expect(page.locator('meta[name="twitter:description"]')).toHaveAttribute(
+        'content',
+        metadata.description,
+      );
+      await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute(
+        'content',
+        'https://2ml.ai/images/og.png',
+      );
     });
   }
 
-  test('the home page declares an Open Graph image that exists', async ({ page, request }) => {
-    await page.goto('/');
-    const image = await page.locator('meta[property="og:image"]').first().getAttribute('content');
-    expect(image).toContain('/images/og.png');
-
+  test('the Open Graph image exists', async ({ request }) => {
     const response = await request.get('/images/og.png');
     expect(response.status()).toBe(200);
   });

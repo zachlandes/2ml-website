@@ -1,13 +1,13 @@
-import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Linkedin } from 'lucide-react';
 import ClosingCTA from '@/components/sections/ClosingCTA';
+import { createPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'About',
-  description:
-    'We are a California-based AI and data engineering consulting firm dedicated to implementing state-of-the-art AI solutions for businesses.',
-};
+export const metadata = createPageMetadata(
+  'About',
+  'We are a California-based AI and data engineering consulting firm dedicated to implementing state-of-the-art AI solutions for businesses.',
+  '/about',
+);
 
 const partners = [
   {

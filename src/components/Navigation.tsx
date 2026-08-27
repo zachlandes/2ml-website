@@ -107,18 +107,36 @@ const Navigation = () => {
         className="border-t border-rule bg-paper sm:hidden"
       >
         <div className="container-editorial flex flex-col py-1">
-          {[...navItems, { name: 'Contact', path: '/contact' }].map((item) => (
+          {navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
               aria-current={pathname === item.path ? 'page' : undefined}
-              className={`border-b border-rule py-3.5 text-base last:border-b-0 ${
+              className={`border-b border-rule py-3.5 text-base ${
                 pathname === item.path ? 'text-ink' : 'text-muted'
               }`}
             >
               {item.name}
             </Link>
           ))}
+          <Link
+            href="/contact"
+            aria-current={pathname === '/contact' ? 'page' : undefined}
+            className={`hidden py-3.5 text-base min-[360px]:block ${
+              pathname === '/contact' ? 'text-ink' : 'text-muted'
+            }`}
+          >
+            Contact
+          </Link>
+          <Link
+            href="/contact"
+            aria-current={pathname === '/contact' ? 'page' : undefined}
+            className={`py-3.5 text-base min-[360px]:hidden ${
+              pathname === '/contact' ? 'text-ink' : 'text-muted'
+            }`}
+          >
+            Talk to a partner
+          </Link>
         </div>
       </div>
     </nav>

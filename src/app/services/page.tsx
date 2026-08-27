@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
 import ClosingCTA from '@/components/sections/ClosingCTA';
 import { services } from '@/content/services';
+import { createPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Services',
-  description:
-    'We offer comprehensive AI and data engineering solutions to help businesses leverage the power of artificial intelligence.',
-};
+export const metadata = createPageMetadata(
+  'Services',
+  'We offer comprehensive AI and data engineering solutions to help businesses leverage the power of artificial intelligence.',
+  '/services',
+);
 
 export default function Services() {
   return (

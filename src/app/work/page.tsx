@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
 import ClosingCTA from '@/components/sections/ClosingCTA';
+import { createPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Work',
-  description:
-    'A large enterprise needed to know whether realtime voice AI could work for them before committing budget. In three weeks they had a speaking prototype with live evaluations; in six, an MVP on scalable cloud infrastructure.',
-};
+export const metadata = createPageMetadata(
+  'Work',
+  'A large enterprise needed to know whether realtime voice AI could work for them before committing budget. In three weeks they had a speaking prototype with live evaluations; in six, an MVP on scalable cloud infrastructure.',
+  '/work',
+);
 
 const capabilities = [
   { title: 'Speech agent', detail: 'Low-latency, interruptible, grounded in their data.' },
