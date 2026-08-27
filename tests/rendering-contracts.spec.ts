@@ -82,6 +82,16 @@ test.describe('navigation', () => {
     await expect(toggle).toBeFocused();
   });
 
+  test('the current route link closes the mobile panel', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 900 });
+    await page.goto('/services');
+
+    await page.getByRole('button', { name: 'Menu' }).click();
+    const panel = page.locator('#mobile-nav');
+    await panel.getByRole('link', { name: 'Services' }).click();
+    await expect(panel).toBeHidden();
+  });
+
   test('the current route is marked for assistive technology', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 900 });
     await page.goto('/services');

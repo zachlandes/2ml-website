@@ -111,6 +111,7 @@ const Navigation = () => {
               key={item.path}
               href={item.path}
               aria-current={pathname === item.path ? 'page' : undefined}
+              onClick={() => setIsMenuOpen(false)}
               className={`border-b border-rule py-3.5 text-base ${
                 pathname === item.path ? 'text-ink' : 'text-muted'
               }`}
@@ -121,6 +122,7 @@ const Navigation = () => {
           <Link
             href="/contact"
             aria-current={pathname === '/contact' ? 'page' : undefined}
+            onClick={() => setIsMenuOpen(false)}
             className={`hidden py-3.5 text-base min-[360px]:block ${
               pathname === '/contact' ? 'text-ink' : 'text-muted'
             }`}
@@ -130,6 +132,7 @@ const Navigation = () => {
           <Link
             href="/contact"
             aria-current={pathname === '/contact' ? 'page' : undefined}
+            onClick={() => setIsMenuOpen(false)}
             className={`py-3.5 text-base min-[360px]:hidden ${
               pathname === '/contact' ? 'text-ink' : 'text-muted'
             }`}
