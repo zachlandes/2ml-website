@@ -91,6 +91,29 @@ export default function About() {
         </div>
       </section>
 
+      {/* Provisional: assembled from the owner's stated positions as a starting point for his own pass */}
+      <section className="section-block">
+        <div className="container-editorial grid gap-6 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <h2 className="heading-section">Where we stand</h2>
+          </div>
+          <div className="lg:col-span-7">
+            <p className="max-w-[720px] text-base leading-[1.65] text-ink-soft lg:text-[19px]">
+              AI should leave the people who meet it better off. That is the whole test, and it rules
+              some work out. We won&rsquo;t build AI that replaces a medical intervention unless there
+              is a safety process with expert review behind it; we turned down a psychology voice-AI
+              project because we could not be the ones deciding whether it was safe. When no human is
+              in the loop, the person on the other end is told up front that they are talking to AI.
+              Models arrive with the biases of their training data, and we treat that as our problem:
+              in a product used mostly by minority users, where the AI assessed people on their
+              conversations, we blinded the assessment so the score could not depend on how someone
+              talks. And we are not interested in AI that is anti-consumer. It should improve the
+              experience, not run a race to the bottom.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <ClosingCTA />
     </>
   );

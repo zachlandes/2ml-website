@@ -26,7 +26,7 @@ export const engagements: Engagement[] = [
       'A startup needed to work out what a realtime voice-AI product should be before committing to it. In three weeks they had a speaking prototype with live evaluations; in six, an MVP on scalable cloud infrastructure. Two pilots followed, and they kept us on.',
     highlights: [
       { title: 'Speech agent', detail: 'Low-latency, interruptible, grounded in their data.' },
-      { title: 'Live evaluations', detail: 'Every conversation scored, so the pilots produced evidence.' },
+      { title: 'Live evaluations', detail: 'Every conversation scored, blind to how a person talks, so the pilots produced evidence.' },
       { title: 'Built to hand over', detail: 'Infrastructure as code, tests, documentation.' },
     ],
     stat: { figure: '3 wks', label: 'to a speaking prototype' },
