@@ -35,7 +35,6 @@ const config: Config = {
       },
       maxWidth: {
         'editorial': '1440px',
-        'measure': '720px',
       },
     },
   },

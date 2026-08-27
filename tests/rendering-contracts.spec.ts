@@ -346,6 +346,16 @@ test.describe('removed surfaces', () => {
     const response = await request.get('/case-studies');
     expect(response.status()).toBe(404);
   });
+
+  test('a missing page still renders on paper, with the footer', async ({ page }) => {
+    await page.goto('/case-studies');
+    await expect(page.getByRole('heading', { name: '404' })).toBeVisible();
+    await expect(page.locator('footer')).toBeVisible();
+    const background = await page.evaluate(
+      () => getComputedStyle(document.body).backgroundColor,
+    );
+    expect(background).toBe('rgb(250, 247, 242)');
+  });
 });
 
 test.describe('motion', () => {

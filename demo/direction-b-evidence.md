@@ -222,3 +222,13 @@ out/work.html
 ## One string still needs approval
 
 The mobile menu toggle is an icon button, so it needs an accessible name and there is no existing visible label to borrow. It currently ships `aria-label="Menu"`. That is the only user-facing or assistive string in this change that is neither existing site copy nor approved artboard copy.
+
+## The 404
+
+Next's built-in not-found renders a white full-height slab that pushes the footer off screen. `out/404.html` is what Cloudflare Pages serves for any unknown path, so it now renders on paper with the site's own chrome. The wording is Next's own default, which is what the site already served here.
+
+```bash {image}
+![The 404 page at 1280px](direction-b-404-1280.png)
+```
+
+![The 404 page at 1280px](d785ee27-2026-08-27.png)
