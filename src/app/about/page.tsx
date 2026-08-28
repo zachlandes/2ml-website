@@ -54,7 +54,8 @@ const positions = [
   },
   {
     rule: 'No race to the bottom',
-    detail: 'We are not interested in AI that is anti-consumer. It should improve the experience.',
+    detail:
+      'We will not build AI that invades people’s privacy for the company’s profit rather than their benefit, or that automates spam and sales content with no human reviewing it. AI should improve the experience, not degrade it.',
   },
 ];
 
