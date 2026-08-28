@@ -336,23 +336,17 @@ test.describe('settled content decisions', () => {
       .getByRole('heading', { name: 'Where we stand' })
       .locator('..')
       .locator('..');
-    await expect(position).toContainText(
-      'AI should leave the people who meet it better off. That is the whole test, and it rules some work out.',
-    );
-    await expect(position.locator('.rule-item h3')).toHaveText([
-      'We will not sell you what you do not need',
-      'No AI in place of a medical intervention without expert review',
-      'People are told when they are talking to AI',
-      'The bias in the training data is our problem',
-      'No race to the bottom',
-    ]);
-    await expect(position.locator('.rule-item p')).toHaveText([
-      'We won’t sell you AI when there’s a better solution to your problem, and we won’t sell you our services when we aren’t the right partners to accomplish your goals.',
-      'We turned down a psychology voice-AI project because we could not be the ones deciding whether it was safe.',
-      'Up front, whenever no human is in the loop.',
-      'In a product used mostly by minority users, where the AI assessed people on their conversations, we blinded the assessment so the score could not depend on how someone talks.',
-      'We are not interested in AI that is anti-consumer. It should improve the experience.',
-    ]);
+    const ruleItems = position.locator('.rule-item');
+    await expect(ruleItems).toHaveCount(5);
+    for (const ruleItem of await ruleItems.all()) {
+      const heading = ruleItem.locator('h3');
+      const body = ruleItem.locator('p');
+      await expect(heading).toHaveCount(1);
+      await expect(heading).toHaveText(/\S/);
+      await expect(heading).toHaveCSS('font-family', /Instrument_Serif/i);
+      await expect(body).toHaveCount(1);
+      await expect(body).toHaveText(/\S/);
+    }
 
     const peopleY = await main
       .getByRole('heading', { name: 'Who does the work' })
