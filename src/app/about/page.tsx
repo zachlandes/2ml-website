@@ -55,7 +55,7 @@ const positions = [
   {
     rule: 'People are not the product',
     detail:
-      'We won’t build products that invade people’s privacy for corporate profit, like selling users’ data to third parties so ads can follow them around the internet. And we don’t make tools that automate spam and sales content without a human reviewing them. We’d rather be good stewards of the public internet.',
+      'We won’t build products that invade people’s privacy for corporate profit, like selling users’ data to third parties so ads can follow them around the internet. And we don’t make tools that automate spam and sales content without a human reviewing them. We build products that earn attention rather than take it.',
   },
 ];
 
