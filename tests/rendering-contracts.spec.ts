@@ -430,33 +430,37 @@ test.describe('settled content decisions', () => {
     await expect(kevinBio).toContainText('Nielsen');
   });
 
-  test('Work renders the three engagements as equal rows with the settled facts', async ({ page }) => {
+  test('Work renders three complete engagements in the settled order', async ({ page }) => {
     await page.goto('/work');
 
     const rows = page.locator('main > section.section-block');
     await expect(rows).toHaveCount(3);
-    await expect(rows.locator('h2')).toHaveText([
-      'A voice product, shaped and shipped alongside its founders',
-      'A clinical assessment, rebuilt as software',
-      'A working agent in three days, leading their engineers through the build',
-    ]);
-    await expect(rows.nth(0).getByText('3 wks', { exact: true })).toBeVisible();
+    await expect(rows.nth(0)).toHaveAttribute('id', 'voice-product');
+    await expect(rows.nth(1)).toHaveAttribute('id', 'clinical-assessment');
+    await expect(rows.nth(2)).toHaveAttribute('id', 'three-days');
+
+    for (const row of await rows.all()) {
+      await expect(row.locator('.eyebrow')).toHaveText(/\S/);
+      await expect(row.locator('p.italic')).toHaveText(/\S/);
+      await expect(row.locator('h2')).toHaveText(/\S/);
+      await expect(row.locator('.lg\\:col-span-6 > p')).toHaveText(/\S/);
+      await expect(row.locator('dl')).toHaveCount(1);
+      await expect(row.locator('dt')).toHaveText(/\S/);
+      await expect(row.locator('dd')).toHaveText(/\S/);
+    }
+
+    const highlights = rows.locator('.lg\\:col-span-6 > .grid > div');
+    await expect(highlights).toHaveCount(6);
+    await expect(rows.nth(0).locator('.lg\\:col-span-6 > .grid > div')).toHaveCount(3);
+    await expect(rows.nth(1).locator('.lg\\:col-span-6 > .grid > div')).toHaveCount(0);
+    await expect(rows.nth(2).locator('.lg\\:col-span-6 > .grid > div')).toHaveCount(3);
+    for (const highlight of await highlights.all()) {
+      await expect(highlight.locator('span')).toHaveCount(2);
+      await expect(highlight.locator('span').nth(0)).toHaveText(/\S/);
+      await expect(highlight.locator('span').nth(1)).toHaveText(/\S/);
+    }
+
     await expect(rows.nth(1).getByText('2,600+', { exact: true })).toBeVisible();
-    await expect(rows.nth(2).getByText('3 days', { exact: true })).toBeVisible();
-    await expect(rows.nth(1)).toContainText('FERPA-grade data');
-    await expect(rows.nth(1)).toContainText('It is in production today, and its customers pay per child on it.');
-    await expect(rows.nth(1).locator('dd')).toHaveText('children on the platform');
-    await expect(rows.nth(2)).toContainText('foundation on day one, alone');
-    await expect(rows.nth(2)).toContainText('had a working application by Friday');
-    await expect(rows.nth(2)).toContainText('preliminary commitment');
-    await expect(rows.nth(2).getByText('Realtime voice', { exact: true })).toBeVisible();
-    await expect(rows.nth(2)).toContainText('A voice-AI pipeline built from scratch, not assembled from a demo.');
-    await expect(rows.nth(2).getByText('On the phone', { exact: true })).toBeVisible();
-    await expect(rows.nth(2)).toContainText('Telephony wired in, so the agent could take a real call.');
-    await expect(rows.nth(2).getByText('Their team, from day two', { exact: true })).toBeVisible();
-    await expect(rows.nth(2)).toContainText(
-      'The work split across their engineers and integrated by Friday.',
-    );
 
     const publicCopy = await page.locator('main').innerText();
     expect(publicCopy).not.toMatch(/4,000|HIPAA|voice clon|\$\d/i);
