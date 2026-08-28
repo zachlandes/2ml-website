@@ -125,9 +125,10 @@ export default function About() {
             <h2 className="heading-section">Where we stand</h2>
             <p className="body-copy max-w-[360px]">AI should be used to make life better.</p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-8 lg:col-span-8">
+          {/* One row per position, so a short body never leaves a hole beside a long one */}
+          <div className="flex flex-col gap-6 lg:col-span-8 lg:gap-8">
             {positions.map((position) => (
-              <div key={position.rule} className="rule-item">
+              <div key={position.rule} className="rule-item sm:grid sm:grid-cols-[2fr_3fr] sm:gap-x-8">
                 <h3 className="heading-item">{position.rule}</h3>
                 <p className="body-copy">{position.detail}</p>
               </div>
