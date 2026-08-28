@@ -13,6 +13,7 @@ export default function Services() {
     <>
       <section className="container-editorial flex flex-col gap-4 pb-10 pt-14 lg:gap-5 lg:pb-16 lg:pt-24">
         <h1 className="text-[40px] leading-[1.05] tracking-[-0.02em] lg:text-[60px]">What we build</h1>
+        <p className="body-lead max-w-[720px]">When you need more than execution.</p>
       </section>
 
       <section className="section-block">
