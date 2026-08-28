@@ -50,7 +50,7 @@ const positions = [
   {
     rule: 'The bias in the training data is our problem',
     detail:
-      'In a product used mostly by minority users, where the AI assessed people on their conversations, we blinded the assessment so the score could not depend on how someone talks.',
+      'Where AI assessed people on their conversations, we blinded it to how they talk, so the score couldn’t depend on their vernacular.',
   },
   {
     rule: 'No race to the bottom',
