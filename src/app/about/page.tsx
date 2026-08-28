@@ -55,7 +55,7 @@ const positions = [
   {
     rule: 'No race to the bottom',
     detail:
-      'We will not build AI that invades people’s privacy for the company’s profit rather than their benefit, or that automates spam and sales content with no human reviewing it. AI should improve the experience, not degrade it.',
+      'We will not build AI that invades people’s privacy for corporate profit at the user’s expense. And we don’t make tools that automate spam and sales content without a human reviewing them. We’d rather be good stewards of the public internet.',
   },
 ];
 
