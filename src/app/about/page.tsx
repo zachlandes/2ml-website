@@ -48,7 +48,7 @@ const positions = [
     detail: 'Up front, whenever no human is in the loop.',
   },
   {
-    rule: 'The bias in the training data is our problem',
+    rule: 'When AI judges people, we assume it is biased',
     detail:
       'Where AI assessed people on their conversations, we blinded it to how they talk, so the score couldn’t depend on their vernacular.',
   },
