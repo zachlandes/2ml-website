@@ -50,7 +50,7 @@ const positions = [
   {
     rule: 'When AI judges people, we assume it is biased',
     detail:
-      'Where AI assessed people on their conversations, we blinded it to how they talk, so the score couldn’t depend on their vernacular.',
+      'Where AI assessed people on their conversations, we blinded it to how they talk, so the score couldn’t depend on their gender or vernacular.',
   },
   {
     rule: 'No race to the bottom',
