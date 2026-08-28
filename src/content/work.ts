@@ -48,7 +48,7 @@ export const engagements: Engagement[] = [
     problem: 'Six weeks, six engineers, no working agent.',
     title: 'A working agent in three days, leading their engineers through the build',
     summary:
-      "A security startup's CTO and six engineers had spent six weeks without a working conversational agent. We built one from scratch in three days: the foundation on day one, alone; then, with the CTO, split the rest into pieces, matched each to one of their engineers, and had a working application by Friday. They pitched it to a major crypto exchange that day and came away with a preliminary commitment.",
+      "A security startup’s seven engineers spent six weeks trying and failing to build a conversational agent. We built it with them in three days: the foundation on day one, ourselves; then, with the CTO, we split the remaining work, matching each piece to one of their engineers. By the afternoon of the third day, they demo’d the working app to a major crypto exchange and came away with a preliminary commitment.",
     highlights: [
       { title: 'Realtime voice', detail: 'A voice-AI pipeline built from scratch, not assembled from a demo.' },
       { title: 'On the phone', detail: 'Telephony wired in, so the agent could take a real call.' },
