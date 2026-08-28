@@ -380,7 +380,7 @@ test.describe('settled content decisions', () => {
 
     const main = page.locator('main');
     const hero = main.locator('> section').first();
-    await expect(hero.getByText('Three engagements', { exact: true })).toBeVisible();
+    await expect(hero.getByText('Selected work', { exact: true })).toBeVisible();
     await expect(hero.locator('dt')).toHaveText(['3 wks', '2,600+', '3 days']);
     await expect(hero).not.toContainText('Nielsen');
     await expect(hero).not.toContainText('Walmart');

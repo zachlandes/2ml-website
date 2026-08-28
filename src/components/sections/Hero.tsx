@@ -24,7 +24,7 @@ export default function Hero() {
       </div>
 
       <div className="mt-10 flex flex-col gap-5 border-t border-rule pt-6 lg:col-span-4 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
-        <p className="eyebrow">Three engagements</p>
+        <p className="eyebrow">Selected work</p>
         <dl className="flex flex-col gap-3.5">
           {engagements
             .filter((entry) => entry.stat)

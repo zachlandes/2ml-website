@@ -148,6 +148,8 @@ Permissions can be pursued later and the entries upgraded then.
 - "Read all three" sat between entry one and entries two and three on a phone, pointing at content directly below it. It now follows all three.
 - The hero strip carried a biographical line (Nielsen, Walmart, OpenTable, the patents) under the "Three engagements" label, so it read as engagements. Removed: every fact in it already appears under the right name in "Who does the work" on the same page. If it ever returns to the hero it needs its own label, ruled off from the stats.
 
+- The hero strip's eyebrow "Three engagements" read as a lifetime count. Now "Selected work", the standard label for a chosen subset. The Work page H1 "Three engagements, three different problems" has the same shape and is the owner's to reword if he wants.
+
 ### Layout consequences
 
 - The former right-column paragraph under "Voice AI, from open question to production" read as a footnote to the voice-AI entry.
