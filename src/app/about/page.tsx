@@ -53,9 +53,9 @@ const positions = [
       'Where AI assessed people on their conversations, we blinded it to how they talk, so the score couldn’t depend on their gender or vernacular.',
   },
   {
-    rule: 'No race to the bottom',
+    rule: 'People are not the product',
     detail:
-      'We will not build AI that invades people’s privacy for corporate profit at the user’s expense. And we don’t make tools that automate spam and sales content without a human reviewing them. We’d rather be good stewards of the public internet.',
+      'We won’t build products that invade people’s privacy for corporate profit, like selling your data to third parties so ads can follow you around the internet. And we don’t make tools that automate spam and sales content without a human reviewing them. We’d rather be good stewards of the public internet.',
   },
 ];
 
