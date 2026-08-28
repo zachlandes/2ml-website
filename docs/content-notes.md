@@ -47,6 +47,7 @@ The rewrite itself is a single pass in the owner's own voice, still to come.
       Framing that lands and is accurate: the grader was blinded, like a blind audition; the rewrite fed the assessment, not the user, so nobody's words were changed for them. Say "the score could not depend on how someone talks"; do not describe it as removing how people speak. Mechanism detail stays off the About page. Belongs in two places: one sentence in the ethics passage, one line beside Live evaluations in the Work entry.
   (5) The right thing includes whether it should be built at all.
   (6) Two further red lines (2026-08-27): no invading user privacy to benefit company profit rather than user experience; no automating spam and sales content without human review ("enshittifying the internet", the owner's phrase, kept off the page). Folded into the "No race to the bottom" item as its concrete body, replacing the vaguer "anti-consumer" line.
+  Owner rewrite drafts (2026-08-27), with editorial notes: intro "AI should be used to make life better." adopted; "the people who meet it" anthropomorphised the model and "That is the whole test, and it rules some work out" was the aphorism reflex, an AI tell. The headings already say the list is refusals. Heading 2 alternative "AI is not medical advice (without expert validation)" (a hedge in a heading, and disclaimer register; the claim is a stance). Body 2 "We turned down an AI-voice talk therapy project because we couldn't be sure it was safe." adopted; note it drops the sharper reason, that he could not be the one deciding. Character line "We lead with curiosity, kindness, and determination" is not a red line and is three abstract nouns; if used, it belongs in the About intro in behavioural form (what those words look like from the client's side; "we don't stop until it works" carries grit).
   Purpose and scope, settled: the section is written as accountability (what we will not do, so a client knows who they are hiring), which is also what makes it sell to the right clients. Not a code of conduct: five or six lines, each a refusal of something a real client might actually ask for. A line nobody would ask us to violate does not belong.
   Register: a rule, then the thing actually done. Keep spoken phrases like "race to the bottom"; they are the anti-tell.
   Open framing choice (2026-08-27): ethics passage, or a mission statement that heavily touches ethics.
@@ -175,6 +176,19 @@ Permissions can be pursued later and the entries upgraded then.
   This is not a return of the removed 160px hero logo, which made the logo do the hero's job.
 - The opaque white-ground logo and its `mix-blend-multiply` workaround are gone.
   See [AGENTS.md](../AGENTS.md#design) for the current asset and regeneration contract.
+
+## Voice tells found in this review (proposed additions to the write-like-zach invariants)
+
+Each of these was caught by the owner on AI-drafted site copy on 2026-08-27; the quoted phrase is the one he rejected.
+
+- NEVER add a short second sentence that delivers a verdict on the first ("That is the whole test, and it rules some work out."). The aphorism reflex. Say the thing once.
+- Don't anthropomorphise AI ("the people who meet it"). People do not meet software; they use it, talk to it, are assessed by it.
+- Prefer the concrete event to the quality ("their own engineers took it from there", not "a team that could carry it"; "they kept us on", not "a lasting relationship"). If a phrase sounds like a headline rather than something said on a call, rewrite it as what happened.
+- A line meant to stand alone (heading, stat label, list item) carries no pronoun whose antecedent is elsewhere ("shaped and shipped with them").
+- Don't compress a fact into shorthand that needs the reader to know the domain ("a major exchange" for a crypto exchange; "preliminary commitment" for a first yes). Name the thing in full or say it plainly.
+- When events are nested, don't write them as a parallel list: "three days: the foundation on day one, then..." not "in three days, laid the foundation in one, and handed the rest over".
+- Don't hedge inside a heading ("AI is not medical advice (without expert validation)") and don't let a stance slide into disclaimer register.
+- Three abstract nouns in a row ("curiosity, kindness, and determination") is the values-badge shape; convert to what the words look like from the other side ("we don't stop until it works").
 
 ## Future: writing
 

@@ -41,7 +41,7 @@ const positions = [
   {
     rule: 'No AI in place of a medical intervention without expert review',
     detail:
-      'We turned down a psychology voice-AI project because we could not be the ones deciding whether it was safe.',
+      'We turned down an AI-voice talk therapy project because we couldn’t be sure it was safe.',
   },
   {
     rule: 'People are told when they are talking to AI',
@@ -123,10 +123,7 @@ export default function About() {
         <div className="container-editorial grid gap-8 lg:grid-cols-12 lg:gap-6">
           <div className="flex flex-col gap-3 lg:col-span-4">
             <h2 className="heading-section">Where we stand</h2>
-            <p className="body-copy max-w-[360px]">
-              AI should leave the people who meet it better off. That is the whole test, and it rules
-              some work out.
-            </p>
+            <p className="body-copy max-w-[360px]">AI should be used to make life better.</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-8 lg:col-span-8">
             {positions.map((position) => (
