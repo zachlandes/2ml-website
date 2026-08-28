@@ -200,6 +200,7 @@ Each of these was caught by the owner on AI-drafted site copy on 2026-08-27; the
   Name the thing in full or say it plainly.
 - When events are nested, don't write them as a parallel list: "three days: the foundation on day one, then..." not "in three days, laid the foundation in one, and handed the rest over".
 - Don't hedge inside a heading ("AI is not medical advice (without expert validation)") and don't let a stance slide into disclaimer register.
+- On this site "you" is the client, the business commissioning the product; the people affected by what gets built are "people" or "users", never "you" ("selling users' data ... follow them around", not "your data ... follow you"). The refusals are things we will not do to people on a client's behalf.
 - Three abstract nouns in a row ("curiosity, kindness, and determination") is the values-badge shape; convert to what the words look like from the other side ("we don't stop until it works").
 
 ## Future: writing
