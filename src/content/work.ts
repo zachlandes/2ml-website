@@ -21,9 +21,9 @@ export const engagements: Engagement[] = [
     slug: 'voice-product',
     capability: 'Continuous discovery',
     problem: 'They needed the product before they knew what it should be.',
-    title: 'A voice product, shaped and shipped alongside its founders',
+    title: 'A voice-AI product',
     summary:
-      'A startup needed to work out what a realtime voice-AI product should be before committing to it. In three weeks they had a speaking prototype with live evaluations; in six, an MVP on scalable cloud infrastructure. Two pilots followed, and they kept us on.',
+      'A startup needed to work out what a realtime voice product should be before committing to it. In three weeks they had a speaking prototype with live evaluations; in six, an MVP on scalable cloud infrastructure. Two pilots followed, and they kept us on.',
     highlights: [
       { title: 'Speech agent', detail: 'Low-latency, interruptible, grounded in their data.' },
       { title: 'Live evaluations', detail: 'Every conversation scored, blind to how a person talks, so the pilots produced evidence.' },
