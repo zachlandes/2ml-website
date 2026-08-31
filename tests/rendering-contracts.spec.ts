@@ -395,24 +395,26 @@ test.describe('settled content decisions', () => {
       "two patents in patient data protection; staff engineer on Nielsen's global metadata platform on AWS.",
     );
 
-    const engagementHeadings = main
-      .locator('> section')
-      .nth(1)
-      .getByRole('heading', { level: 2 })
-      .or(main.locator('> section').nth(1).getByRole('heading', { level: 3 }));
-    await expect(engagementHeadings).toHaveText([
-      'A voice product, shaped and shipped alongside its founders',
-      'A clinical assessment, rebuilt as software',
-      'A working agent in three days, leading their engineers through the build',
+    const workSection = main.locator('> section').nth(1);
+    const featuredColumns = workSection.locator('.container-editorial').first().locator('> div');
+    await expect(featuredColumns).toHaveCount(2);
+    await expect(featuredColumns.nth(0).locator('.eyebrow')).toHaveText(/\S/);
+    await expect(featuredColumns.nth(0).locator('p.italic')).toHaveText(/\S/);
+    await expect(featuredColumns.nth(0).locator('h2')).toHaveText(/\S/);
+    await expect(featuredColumns.nth(1).locator('> p')).toHaveText(/\S/);
+
+    const otherEngagements = workSection.getByRole('heading', { level: 3 }).locator('..');
+    await expect(otherEngagements).toHaveCount(2);
+    await expect(otherEngagements.locator('[class~="items-baseline"] > span:first-child')).toHaveText([
+      '2,600+',
+      '3 days',
     ]);
     await expect(main.getByText(/Two pilots followed, and they kept us on\./)).toBeVisible();
     await expect(main).not.toContainText('Realtime voice');
     await expect(main).not.toContainText('On the phone');
     await expect(main).not.toContainText('Their team, from day two');
 
-    const lastEngagement = main.getByRole('heading', {
-      name: 'A working agent in three days, leading their engineers through the build',
-    });
+    const lastEngagement = otherEngagements.nth(1).locator('h3');
     const allWorkLink = main.getByRole('link', { name: 'Read all three →' });
     const lastEngagementBox = await lastEngagement.boundingBox();
     const allWorkLinkBox = await allWorkLink.boundingBox();
