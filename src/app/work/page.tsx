@@ -4,7 +4,7 @@ import { engagements } from '@/content/work';
 
 export const metadata = createPageMetadata(
   'Work',
-  'Three engagements, three different problems: a voice product shaped alongside its founders, a working agent in three days, and a clinical assessment rebuilt as software.',
+  'Three engagements, three different problems: a voice-AI product, a working agent in three days, and a clinical assessment rebuilt as software.',
   '/work',
 );
 

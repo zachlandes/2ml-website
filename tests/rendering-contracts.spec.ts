@@ -489,7 +489,7 @@ test.describe('metadata', () => {
     '/work': {
       title: 'Work | 2ML',
       description:
-        'Three engagements, three different problems: a voice product shaped alongside its founders, a working agent in three days, and a clinical assessment rebuilt as software.',
+        'Three engagements, three different problems: a voice-AI product, a working agent in three days, and a clinical assessment rebuilt as software.',
     },
     '/services': {
       title: 'Services | 2ML',
