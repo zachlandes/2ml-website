@@ -3,92 +3,146 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+const navItems = [
+  { name: 'Work', path: '/work' },
+  { name: 'Services', path: '/services' },
+  { name: 'About', path: '/about' },
+];
 
 const Navigation = () => {
   const pathname = usePathname();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '/contact' },
-  ];
+  // A route change leaves the panel stranded open over the new page
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  // Escape closes the panel and hands focus back to the control that opened it
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [isMenuOpen]);
 
   return (
-    <nav className="fixed w-full top-0 bg-white/50 backdrop-blur-sm border-b z-50">
-      <div className="container-width flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2">
+    <nav className="sticky top-0 z-50 border-b border-rule bg-paper/90 backdrop-blur-sm">
+      <div className="container-editorial flex h-[60px] items-center justify-between lg:h-[72px]">
+        <Link href="/" className="flex shrink-0 items-center gap-2 lg:gap-2.5">
           <Image
-            src="/images/2ml_logo.png"
-            alt="2ML Logo"
-            width={48}
-            height={48}
-            className="hover:opacity-80 transition-opacity"
+            src="/images/2ml_mark-96.png"
+            alt="2ML"
+            width={36}
+            height={36}
+            className="h-[30px] w-[30px] object-contain lg:h-9 lg:w-9"
+            priority
           />
-          <span className="font-semibold text-lg">2ML</span>
+          <span className="font-serif text-[22px] leading-none lg:text-2xl">2ML</span>
         </Link>
-        
-        {/* Desktop Navigation */}
-        <div className="hidden sm:flex items-center gap-6">
-          {navItems.slice(1).map((item) => (
+
+        <div className="hidden items-center gap-8 text-[15px] text-muted sm:flex">
+          {navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
-              className={`text-gray-600 hover:text-primary-600 ${
-                pathname === item.path ? 'text-primary-600 font-medium' : ''
+              aria-current={pathname === item.path ? 'page' : undefined}
+              className={`transition-colors duration-200 hover:text-ink ${
+                pathname === item.path ? 'text-ink' : ''
               }`}
             >
               {item.name}
             </Link>
           ))}
+          <Link href="/contact" className="btn-outline">
+            Talk to a partner
+          </Link>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="sm:hidden">
+        <div className="flex items-center gap-3.5 sm:hidden">
+          {/* Below ~360px the pill and the toggle no longer fit beside the wordmark */}
+          <Link
+            href="/contact"
+            className="btn-outline hidden px-3.5 py-2 text-[13px] min-[360px]:inline-flex"
+          >
+            Talk to a partner
+          </Link>
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-gray-600 hover:text-primary-600"
+            ref={toggleRef}
+            type="button"
+            aria-label="Menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            className="-mr-1 flex h-9 w-9 items-center justify-center text-ink"
           >
             <svg
-              className="w-6 h-6"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              strokeLinecap="round"
+              aria-hidden="true"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-              />
+              <path d={isMenuOpen ? 'M6 18 18 6M6 6l12 12' : 'M4 7h16M4 12h16M4 17h16'} />
             </svg>
           </button>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="sm:hidden absolute top-16 left-0 right-0 bg-white border-t">
-            <div className="px-4 py-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  className={`block py-2 px-4 text-gray-600 hover:bg-gray-50 rounded ${
-                    pathname === item.path ? 'text-primary-600 bg-primary-50' : ''
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
+      <div
+        id="mobile-nav"
+        hidden={!isMenuOpen}
+        className="border-t border-rule bg-paper sm:hidden"
+      >
+        <div className="container-editorial flex flex-col py-1">
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              href={item.path}
+              aria-current={pathname === item.path ? 'page' : undefined}
+              onClick={() => setIsMenuOpen(false)}
+              className={`border-b border-rule py-3.5 text-base ${
+                pathname === item.path ? 'text-ink' : 'text-muted'
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
+          <Link
+            href="/contact"
+            aria-current={pathname === '/contact' ? 'page' : undefined}
+            onClick={() => setIsMenuOpen(false)}
+            className={`hidden py-3.5 text-base min-[360px]:block ${
+              pathname === '/contact' ? 'text-ink' : 'text-muted'
+            }`}
+          >
+            Contact
+          </Link>
+          <Link
+            href="/contact"
+            aria-current={pathname === '/contact' ? 'page' : undefined}
+            onClick={() => setIsMenuOpen(false)}
+            className={`py-3.5 text-base min-[360px]:hidden ${
+              pathname === '/contact' ? 'text-ink' : 'text-muted'
+            }`}
+          >
+            Talk to a partner
+          </Link>
+        </div>
       </div>
     </nav>
   );
 };
 
-export default Navigation; 
+export default Navigation;
