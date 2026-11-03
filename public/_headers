@@ -1,0 +1,7 @@
+# Cloudflare Pages response headers, copied into out/ by the static export
+# Pages already sends X-Content-Type-Options and Referrer-Policy itself; repeating them here duplicates them
+# HSTS leaves out includeSubDomains and preload: other 2ml.ai subdomains are not known to serve HTTPS
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: DENY
+  Content-Security-Policy: frame-ancestors 'none'
