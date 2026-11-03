@@ -1,3 +1,5 @@
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { test, expect, type Page } from '@playwright/test';
 
 const ROUTES = ['/', '/work', '/services', '/about', '/contact'];
@@ -593,14 +595,24 @@ test.describe('metadata', () => {
     expect((await request.get('/images/2ml_mark.png')).status()).toBe(200);
   });
 
-  test('the export ships the Cloudflare Pages security headers for every path', async ({ request }) => {
-    const rules = await (await request.get('/_headers')).text();
-    const lines = rules.split('\n').filter((line) => line && !line.startsWith('#'));
-    expect(lines).toEqual([
-      '/*',
-      '  Strict-Transport-Security: max-age=31536000',
-      '  X-Frame-Options: DENY',
-      "  Content-Security-Policy: frame-ancestors 'none'",
+  test('the static export ships the Cloudflare Pages header config', () => {
+    const file = join(__dirname, '..', 'out', '_headers');
+    expect(existsSync(file)).toBe(true);
+    const rules: Record<string, Array<[string, string]>> = {};
+    let current: Array<[string, string]> | undefined;
+    for (const line of readFileSync(file, 'utf8').split('\n')) {
+      if (!line.trim() || line.trimStart().startsWith('#')) continue;
+      if (!/^\s/.test(line)) {
+        current = rules[line.trim()] = [];
+        continue;
+      }
+      const colon = line.indexOf(':');
+      current?.push([line.slice(0, colon).trim(), line.slice(colon + 1).trim()]);
+    }
+    expect(rules['/*']).toEqual([
+      ['Strict-Transport-Security', 'max-age=31536000'],
+      ['X-Frame-Options', 'DENY'],
+      ['Content-Security-Policy', "frame-ancestors 'none'"],
     ]);
   });
 });
