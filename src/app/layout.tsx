@@ -3,6 +3,7 @@ import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { siteUrl, titleTemplate } from "@/lib/metadata";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,10 +23,10 @@ const description =
   "We are two builders with product judgment, architecture and engineering in the same heads. We ship AI systems from prototype to production without a hand-off chain, because the people who understand your problem are the people who build it.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://2ml.ai"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "2ML | The right thing, built well.",
-    template: "%s | 2ML",
+    template: titleTemplate,
   },
   description,
   icons: {

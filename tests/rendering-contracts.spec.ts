@@ -487,22 +487,22 @@ test.describe('metadata', () => {
         'We are two builders with product judgment, architecture and engineering in the same heads. We ship AI systems from prototype to production without a hand-off chain, because the people who understand your problem are the people who build it.',
     },
     '/work': {
-      title: 'Work | 2ML',
+      title: 'Work | 2ML · San Francisco',
       description:
         'Three engagements, three different problems: a voice-AI product, a working agent in three days, and a clinical assessment rebuilt as software.',
     },
     '/services': {
-      title: 'Services | 2ML',
+      title: 'Services | 2ML · San Francisco',
       description:
         'Agents that work inside your systems, AI inside your product, a plan and a team that can execute it, and a fractional AI lead for small teams.',
     },
     '/about': {
-      title: 'About | 2ML',
+      title: 'About | 2ML · San Francisco',
       description:
         'We are a California-based AI and data engineering consulting firm dedicated to implementing state-of-the-art AI solutions for businesses.',
     },
     '/contact': {
-      title: 'Contact | 2ML',
+      title: 'Contact | 2ML · San Francisco',
       description:
         'Get in touch to discuss how we can help implement AI solutions for your business. A partner replies within one business day.',
     },
@@ -526,6 +526,8 @@ test.describe('metadata', () => {
       );
       const openGraphUrl = await page.locator('meta[property="og:url"]').getAttribute('content');
       expect(new URL(openGraphUrl!).href).toBe(new URL(route, 'https://2ml.ai').href);
+      const canonical = await page.locator('link[rel="canonical"]').getAttribute('href');
+      expect(new URL(canonical!).href).toBe(new URL(route, 'https://2ml.ai').href);
       await expect(page.locator('meta[property="og:image"]').first()).toHaveAttribute(
         'content',
         'https://2ml.ai/images/og.png',
@@ -548,6 +550,58 @@ test.describe('metadata', () => {
   test('the Open Graph image exists', async ({ request }) => {
     const response = await request.get('/images/og.png');
     expect(response.status()).toBe(200);
+  });
+
+  test('the 404 page does not claim a canonical URL', async ({ page }) => {
+    await page.goto('/no-such-page');
+    await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+  });
+
+  test('the sitemap lists every route, and robots.txt points to it', async ({ request }) => {
+    const sitemap = await (await request.get('/sitemap.xml')).text();
+    const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+    expect(locations).toEqual(ROUTES.map((route) => new URL(route, 'https://2ml.ai').href));
+
+    const robots = await (await request.get('/robots.txt')).text();
+    expect(robots).toContain('Sitemap: https://2ml.ai/sitemap.xml');
+    expect(robots).not.toMatch(/Disallow: \/\s*$/m);
+  });
+
+  test('the homepage describes the organisation and website as JSON-LD', async ({ page, request }) => {
+    await page.goto('/');
+    const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
+    expect(blocks).toHaveLength(1);
+    expect(JSON.parse(blocks[0])).toEqual({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          '@id': 'https://2ml.ai/#organization',
+          name: '2ML',
+          url: 'https://2ml.ai/',
+          logo: 'https://2ml.ai/images/2ml_mark.png',
+        },
+        {
+          '@type': 'WebSite',
+          '@id': 'https://2ml.ai/#website',
+          name: '2ML',
+          url: 'https://2ml.ai/',
+          publisher: { '@id': 'https://2ml.ai/#organization' },
+        },
+      ],
+    });
+    expect((await request.get('/images/2ml_mark.png')).status()).toBe(200);
+  });
+
+  test('the export ships the Cloudflare Pages security headers for every path', async ({ request }) => {
+    const rules = await (await request.get('/_headers')).text();
+    const lines = rules.split('\n').filter((line) => line && !line.startsWith('#'));
+    expect(lines).toEqual([
+      '/*',
+      '  Strict-Transport-Security: max-age=31536000',
+      '  X-Frame-Options: DENY',
+      "  Content-Security-Policy: frame-ancestors 'none'",
+    ]);
   });
 });
 
